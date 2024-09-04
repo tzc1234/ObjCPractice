@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[ImageCell class] forCellReuseIdentifier:ImageCell.cellID];
 }
 
@@ -25,7 +26,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCell.cellID];
+    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCell.cellID];
+    cell.titleLabel.text = @"Title";
+    
     return cell;
 }
 
