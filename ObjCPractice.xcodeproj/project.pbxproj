@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
 		BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AA2C8867B600B785E3 /* SceneDelegate.m */; };
 		BE8379AE2C8867B600B785E3 /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AD2C8867B600B785E3 /* ImagesViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE7AF7F62C88B7F400DA8BF3 /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		BE7AF7F72C88B81C00DA8BF3 /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		BE8379A32C8867B600B785E3 /* ObjCPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8379A62C8867B600B785E3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BE8379A72C8867B600B785E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +46,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE7AF7F02C88B02400DA8BF3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
+				BE7AF7F72C88B81C00DA8BF3 /* Photo.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		BE83799A2C8867B600B785E3 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +78,7 @@
 				BE8379A72C8867B600B785E3 /* AppDelegate.m */,
 				BE8379A92C8867B600B785E3 /* SceneDelegate.h */,
 				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
+				BE7AF7F02C88B02400DA8BF3 /* Networking */,
 				BE8379C02C886F8500B785E3 /* UI */,
 				BE8379B22C8867B700B785E3 /* Assets.xcassets */,
 				BE8379B42C8867B700B785E3 /* LaunchScreen.storyboard */,
@@ -171,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */,
 				BE8379AE2C8867B600B785E3 /* ImagesViewController.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
