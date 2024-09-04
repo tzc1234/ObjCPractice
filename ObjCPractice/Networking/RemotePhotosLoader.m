@@ -1,0 +1,98 @@
+//
+//  RemotePhotosLoader.m
+//  ObjCPractice
+//
+//  Created by Tsz-Lung on 04/09/2024.
+//
+
+#import "RemotePhotosLoader.h"
+#import "Photo.h"
+
+@interface RemotePhotosLoader ()
+
+@property (copy, nonatomic, nonnull) NSURL *url;
+@property (strong, nonatomic, nonnull) id<HTTPClient> client;
+
+@end
+
+@implementation RemotePhotosLoader
+
+const NSInteger ok = 200;
+
+- (nonnull instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client {
+    self = [super init];
+    self.url = url;
+    self.client = client;
+    return self;
+}
+
+- (void)loadWithCompletion:(void (^ _Nonnull)(NSArray * _Nullable photos, NSError * _Nullable error))completion {
+    [self.client getFromURL:self.url
+                 completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            return completion(nil, [self connectivityError]);
+        }
+        
+        if (response.statusCode != ok || !data) {
+            return completion(nil, [self invalidDataError]);
+        }
+        
+        NSError *invalidDataError = nil;
+        NSArray *photos = [self parsePhotosFromData:data withError:&invalidDataError];
+        
+        if (invalidDataError) {
+            return completion(nil, invalidDataError);
+        }
+        
+        return completion(photos, nil);
+    }];
+}
+
+- (NSArray *)parsePhotosFromData:(NSData *)data withError:(NSError **)jsonError {
+    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:jsonError];
+    if (jsonError && [json isKindOfClass:[NSArray class]] == NO) {
+        *jsonError = [self invalidDataError];
+        return [NSArray array];
+    }
+    
+    NSMutableArray *photos = [NSMutableArray array];
+    NSArray *results = json;
+    
+    for (NSDictionary *d in results) {
+        NSString *ID = d[@"id"];
+        NSString *author = d[@"author"];
+        NSString *webURLStr = d[@"url"];
+        NSString *urlStr = d[@"download_url"];
+        
+        if (!ID || !author || !webURLStr || !urlStr) {
+            *jsonError = [self invalidDataError];
+            return [NSArray array];
+        }
+        
+        NSURL *webURL = [[NSURL alloc] initWithString:webURLStr];
+        NSURL *url = [[NSURL alloc] initWithString:urlStr];
+        
+        if (!webURL || !url) {
+            *jsonError = [self invalidDataError];
+            return [NSArray array];
+        }
+        
+        NSInteger width = [d[@"width"] integerValue];
+        NSInteger height = [d[@"height"] integerValue];
+        
+        Photo *photo = [[Photo alloc] initWithID:ID author:author width:width height:height webURL:webURL url:url];
+        [photos addObject:photo];
+    }
+    
+    return photos;
+}
+
+- (NSError *)connectivityError {
+    return [[NSError alloc] initWithDomain:@"ObjCPractice.RemotePhotosLoader" code:41 userInfo:nil];
+}
+
+- (NSError *)invalidDataError {
+    return [[NSError alloc] initWithDomain:@"ObjCPractice.RemotePhotosLoader" code:42 userInfo:nil];
+}
+
+@end

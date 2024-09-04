@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
 		BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AA2C8867B600B785E3 /* SceneDelegate.m */; };
@@ -19,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
+		BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePhotosLoader.m; sourceTree = "<group>"; };
+		BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePhotosLoader.h; sourceTree = "<group>"; };
 		BE7AF7F62C88B7F400DA8BF3 /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		BE7AF7F72C88B81C00DA8BF3 /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		BE8379A32C8867B600B785E3 /* ObjCPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				BE7AF7F22C88B08A00DA8BF3 /* Infra */,
+				BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */,
+				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
 				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
 				BE7AF7F72C88B81C00DA8BF3 /* Photo.m */,
 			);
@@ -196,6 +201,7 @@
 			files = (
 				BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */,
 				BE8379AE2C8867B600B785E3 /* ImagesViewController.m in Sources */,
+				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,

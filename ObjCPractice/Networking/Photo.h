@@ -15,6 +15,6 @@
 
 - (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
 - (nonnull instancetype)initWithID:(nonnull NSString *)ID author:(nonnull NSString *)author width:(NSInteger)width
-                           height:(NSInteger)height webURL:(nonnull NSURL *)webURL url:(nonnull NSURL *)url;
+                            height:(NSInteger)height webURL:(nonnull NSURL *)webURL url:(nonnull NSURL *)url;
 
 @end
