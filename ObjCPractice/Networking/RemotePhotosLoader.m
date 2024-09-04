@@ -8,6 +8,10 @@
 #import "RemotePhotosLoader.h"
 #import "Photo.h"
 
+NSString * const RemotePhotosLoaderDomain = @"ObjCPractice.RemotePhotosLoader";
+NSInteger const ConnectivityErrorErrorCode = 41;
+NSInteger const InvalidDataErrorCode = 42;
+
 @interface RemotePhotosLoader ()
 
 @property (copy, nonatomic, nonnull) NSURL *url;
@@ -88,11 +92,11 @@ const NSInteger ok = 200;
 }
 
 - (NSError *)connectivityError {
-    return [[NSError alloc] initWithDomain:@"ObjCPractice.RemotePhotosLoader" code:41 userInfo:nil];
+    return [[NSError alloc] initWithDomain:RemotePhotosLoaderDomain code:ConnectivityErrorErrorCode userInfo:nil];
 }
 
 - (NSError *)invalidDataError {
-    return [[NSError alloc] initWithDomain:@"ObjCPractice.RemotePhotosLoader" code:42 userInfo:nil];
+    return [[NSError alloc] initWithDomain:RemotePhotosLoaderDomain code:InvalidDataErrorCode userInfo:nil];
 }
 
 @end
