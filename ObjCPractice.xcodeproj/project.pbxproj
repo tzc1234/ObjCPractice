@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A68842C88EE3C007B9DBF /* URLSessionHTTPClient.m */; };
 		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE0A68842C88EE3C007B9DBF /* URLSessionHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionHTTPClient.m; sourceTree = "<group>"; };
+		BE0A68862C88EE54007B9DBF /* URLSessionHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionHTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePhotosLoader.m; sourceTree = "<group>"; };
 		BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePhotosLoader.h; sourceTree = "<group>"; };
@@ -66,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */,
+				BE0A68862C88EE54007B9DBF /* URLSessionHTTPClient.h */,
+				BE0A68842C88EE3C007B9DBF /* URLSessionHTTPClient.m */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
+				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
