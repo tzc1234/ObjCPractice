@@ -18,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F62C88B7F400DA8BF3 /* Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		BE7AF7F72C88B81C00DA8BF3 /* Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		BE8379A32C8867B600B785E3 /* ObjCPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjCPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,10 +50,19 @@
 		BE7AF7F02C88B02400DA8BF3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				BE7AF7F22C88B08A00DA8BF3 /* Infra */,
 				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
 				BE7AF7F72C88B81C00DA8BF3 /* Photo.m */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		BE7AF7F22C88B08A00DA8BF3 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 		BE83799A2C8867B600B785E3 = {
