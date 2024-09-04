@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesViewController : UIViewController
+@interface ImagesViewController : UITableViewController
 
 
 @end
