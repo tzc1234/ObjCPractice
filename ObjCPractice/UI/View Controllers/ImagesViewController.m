@@ -26,8 +26,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCell.cellID];
-    cell.textLabel.text = @"Cell";
-    
     return cell;
 }
 
