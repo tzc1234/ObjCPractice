@@ -81,6 +81,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BE15F7F12C89BD3B00B4559A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BE8379A62C8867B600B785E3 /* AppDelegate.h */,
+				BE8379A72C8867B600B785E3 /* AppDelegate.m */,
+				BE8379A92C8867B600B785E3 /* SceneDelegate.h */,
+				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		BE7AF7F02C88B02400DA8BF3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,10 +136,7 @@
 		BE8379A52C8867B600B785E3 /* ObjCPractice */ = {
 			isa = PBXGroup;
 			children = (
-				BE8379A62C8867B600B785E3 /* AppDelegate.h */,
-				BE8379A72C8867B600B785E3 /* AppDelegate.m */,
-				BE8379A92C8867B600B785E3 /* SceneDelegate.h */,
-				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
+				BE15F7F12C89BD3B00B4559A /* Main */,
 				BE15F7F02C89BB1D00B4559A /* Model */,
 				BE7AF7F02C88B02400DA8BF3 /* Networking */,
 				BE15F7E62C89A77300B4559A /* Presentation */,

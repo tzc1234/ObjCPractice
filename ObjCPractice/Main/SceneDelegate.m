@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "ImagesViewController.h"
+#import "PhotosViewController.h"
 
 @interface SceneDelegate ()
 
@@ -24,7 +24,7 @@
     
     window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
-    ImagesViewController *controller = [[ImagesViewController alloc] init];
+    PhotosViewController *controller = [[PhotosViewController alloc] init];
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
     [window makeKeyAndVisible];
 }
