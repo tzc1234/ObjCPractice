@@ -1,5 +1,5 @@
 //
-//  ImagesViewController.h
+//  PhotosViewController.h
 //  ObjCPractice
 //
 //  Created by Tsz-Lung on 04/09/2024.
@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ImagesViewController : UITableViewController
+@interface PhotosViewController : UITableViewController
 
 
 @end

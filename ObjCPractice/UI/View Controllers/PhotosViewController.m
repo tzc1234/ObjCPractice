@@ -1,18 +1,18 @@
 //
-//  ImagesViewController.m
+//  PhotosViewController.m
 //  ObjCPractice
 //
 //  Created by Tsz-Lung on 04/09/2024.
 //
 
-#import "ImagesViewController.h"
+#import "PhotosViewController.h"
 #import "ImageCell.h"
 
-@interface ImagesViewController ()
+@interface PhotosViewController ()
 
 @end
 
-@implementation ImagesViewController
+@implementation PhotosViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

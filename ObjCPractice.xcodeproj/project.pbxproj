@@ -12,7 +12,7 @@
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
 		BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AA2C8867B600B785E3 /* SceneDelegate.m */; };
-		BE8379AE2C8867B600B785E3 /* ImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AD2C8867B600B785E3 /* ImagesViewController.m */; };
+		BE8379AE2C8867B600B785E3 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379AD2C8867B600B785E3 /* PhotosViewController.m */; };
 		BE8379B32C8867B700B785E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B22C8867B700B785E3 /* Assets.xcassets */; };
 		BE8379B62C8867B700B785E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B52C8867B700B785E3 /* Base */; };
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
@@ -33,8 +33,8 @@
 		BE8379A72C8867B600B785E3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BE8379A92C8867B600B785E3 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BE8379AA2C8867B600B785E3 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		BE8379AC2C8867B600B785E3 /* ImagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagesViewController.h; sourceTree = "<group>"; };
-		BE8379AD2C8867B600B785E3 /* ImagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagesViewController.m; sourceTree = "<group>"; };
+		BE8379AC2C8867B600B785E3 /* PhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		BE8379AD2C8867B600B785E3 /* PhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		BE8379B22C8867B700B785E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE8379B52C8867B700B785E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE8379B72C8867B700B785E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,8 +113,8 @@
 		BE8379BF2C8869C800B785E3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BE8379AC2C8867B600B785E3 /* ImagesViewController.h */,
-				BE8379AD2C8867B600B785E3 /* ImagesViewController.m */,
+				BE8379AC2C8867B600B785E3 /* PhotosViewController.h */,
+				BE8379AD2C8867B600B785E3 /* PhotosViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */,
-				BE8379AE2C8867B600B785E3 /* ImagesViewController.m in Sources */,
+				BE8379AE2C8867B600B785E3 /* PhotosViewController.m in Sources */,
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
