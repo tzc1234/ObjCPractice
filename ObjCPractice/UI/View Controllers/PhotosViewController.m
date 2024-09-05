@@ -19,10 +19,10 @@
 
 @implementation PhotosViewController
 
-@synthesize viewModel, refreshControl;
+@synthesize viewModel, photos, isInit;
 
 - (nonnull instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel {
-    self = [self init];
+    self = [super init];
     self.title = @"Photos";
     self.viewModel = viewModel;
     self.photos = [NSArray array];
@@ -55,13 +55,13 @@
 }
 
 - (void)reloadPhotos {
-    [viewModel loadPhotos];
+    [self.viewModel loadPhotos];
 }
 
 - (void)setupBindings {
     __weak PhotosViewController *weakSelf = self;
     
-    viewModel.onLoad = ^(BOOL isLoading) {
+    self.viewModel.onLoad = ^(BOOL isLoading) {
         if (isLoading) {
             [weakSelf.tableView.refreshControl beginRefreshing];
         } else {
@@ -69,12 +69,12 @@
         }
     };
     
-    viewModel.didLoad = ^(NSArray * _Nonnull photos) {
+    self.viewModel.didLoad = ^(NSArray * _Nonnull photos) {
         weakSelf.photos = photos;
         [weakSelf.tableView reloadData];
     };
     
-    viewModel.onError = ^(NSString * _Nullable errorMessage) {
+    self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
         NSLog(@"error: %@", errorMessage);
     };
 }
