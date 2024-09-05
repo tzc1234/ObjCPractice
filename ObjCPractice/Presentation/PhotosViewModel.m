@@ -33,7 +33,7 @@
             if (error) {
                 self.onError(@"Error occurred, please try again.");
             } else {
-                self.didLoad(photos ?: [NSArray array]);
+                self.didLoad(photos);
                 self.onError(nil);
             }
             

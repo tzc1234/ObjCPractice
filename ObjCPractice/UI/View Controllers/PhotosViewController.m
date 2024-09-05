@@ -12,7 +12,7 @@
 @interface PhotosViewController ()
 
 @property (nonnull, nonatomic, strong) PhotosViewModel *viewModel;
-@property (nonnull, nonatomic, copy) NSArray *photos;
+@property (nonatomic, copy) NSArray *photos;
 @property (nonatomic) BOOL isInit;
 
 @end
@@ -71,8 +71,8 @@
         }
     };
     
-    self.viewModel.didLoad = ^(NSArray * _Nonnull photos) {
-        weakSelf.photos = photos;
+    self.viewModel.didLoad = ^(NSArray * _Nullable photos) {
+        weakSelf.photos = photos ?: [NSArray array];
         [weakSelf.tableView reloadData];
     };
     
