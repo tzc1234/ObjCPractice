@@ -7,17 +7,15 @@
 
 #import <Foundation/Foundation.h>
 #import "HTTPClient.h"
+#import "PhotosLoader.h"
 
 extern NSString * _Nonnull const RemotePhotosLoaderDomain;
 extern NSInteger const ConnectivityErrorErrorCode;
 extern NSInteger const InvalidDataErrorCode;
 
-typedef void(^PhotosLoaderCompletion)(NSArray * _Nullable photos, NSError * _Nullable error);
-
-@interface RemotePhotosLoader : NSObject
+@interface RemotePhotosLoader : NSObject <PhotosLoader>
 
 - (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
 - (nonnull instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client;
-- (void)loadWithCompletion:(nonnull PhotosLoaderCompletion)completion;
 
 @end

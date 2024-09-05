@@ -22,6 +22,7 @@
 /* Begin PBXFileReference section */
 		BE0A68842C88EE3C007B9DBF /* URLSessionHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionHTTPClient.m; sourceTree = "<group>"; };
 		BE0A68862C88EE54007B9DBF /* URLSessionHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionHTTPClient.h; sourceTree = "<group>"; };
+		BE15F7E52C8999E600B4559A /* PhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosLoader.h; sourceTree = "<group>"; };
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePhotosLoader.m; sourceTree = "<group>"; };
 		BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePhotosLoader.h; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				BE7AF7F22C88B08A00DA8BF3 /* Infra */,
+				BE15F7E52C8999E600B4559A /* PhotosLoader.h */,
 				BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */,
 				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
 				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
