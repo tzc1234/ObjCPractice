@@ -12,12 +12,14 @@
 -(instancetype)initWithID:(NSString *)ID author:(NSString *)author width:(NSInteger)width
                    height:(NSInteger)height webURL:(NSURL *)webURL url:(NSURL *)url {
     self = [super init];
-    _ID = [ID copy];
-    _author = [author copy];
-    _width = width;
-    _height = height;
-    _webURL = [webURL copy];
-    _url = [url copy];
+    if (self) {
+        _ID = [ID copy];
+        _author = [author copy];
+        _width = width;
+        _height = height;
+        _webURL = [webURL copy];
+        _url = [url copy];
+    }
     return self;
 }
 

@@ -21,12 +21,14 @@
 
 @synthesize viewModel, photos, isInit;
 
-- (nonnull instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel {
+- (nullable instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel {
     self = [super init];
-    self.title = @"Photos";
-    self.viewModel = viewModel;
-    self.photos = [NSArray array];
-    self.isInit = YES;
+    if (self) {
+        self.title = @"Photos";
+        self.viewModel = viewModel;
+        self.photos = [NSArray array];
+        self.isInit = YES;
+    }
     return self;
 }
 

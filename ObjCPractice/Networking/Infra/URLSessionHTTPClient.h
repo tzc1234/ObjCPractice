@@ -13,7 +13,7 @@ extern NSInteger const UnexpectedRepresentationErrorCode;
 
 @interface URLSessionHTTPClient : NSObject <HTTPClient>
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithSession:(nonnull NSURLSession *)session;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithSession:(nonnull NSURLSession *)session;
 
 @end

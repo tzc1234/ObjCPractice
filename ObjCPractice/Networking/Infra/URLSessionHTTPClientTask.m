@@ -17,9 +17,11 @@
 
 @synthesize task;
 
-- (nonnull instancetype)initWithTask:(nonnull NSURLSessionTask *)task {
+- (nullable instancetype)initWithTask:(nonnull NSURLSessionTask *)task {
     self = [super init];
-    self.task = task;
+    if (self) {
+        self.task = task;
+    }
     return self;
 }
 

@@ -9,7 +9,7 @@
 
 @interface URLSessionHTTPClientTask : NSObject <HTTPClientTask>
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithTask:(nonnull NSURLSessionTask *)task;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithTask:(nonnull NSURLSessionTask *)task;
 
 @end

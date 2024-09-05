@@ -17,9 +17,11 @@
 
 @synthesize task;
 
-- (nonnull instancetype)initWithTask:(nonnull id<HTTPClientTask>)task {
+- (nullable instancetype)initWithTask:(nonnull id<HTTPClientTask>)task {
     self = [super init];
-    self.task = task;
+    if (self) {
+        self.task = task;
+    }
     return self;
 }
 

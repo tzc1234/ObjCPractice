@@ -21,10 +21,12 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
 
 @implementation RemotePhotosLoader
 
-- (nonnull instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client {
+- (nullable instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client {
     self = [super init];
-    self.url = url;
-    self.client = client;
+    if (self) {
+        self.url = url;
+        self.client = client;
+    }
     return self;
 }
 

@@ -15,7 +15,7 @@ extern NSInteger const RemotePhotosLoaderInvalidDataErrorCode;
 
 @interface RemotePhotosLoader : NSObject <PhotosLoader>
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client;
 
 @end

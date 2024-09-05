@@ -19,9 +19,11 @@
 
 @synthesize onLoadImageData, didLoadImageData;
 
-- (nonnull instancetype)initWithLoader:(nonnull id<ImageDataLoader>)loader {
+- (nullable instancetype)initWithLoader:(nonnull id<ImageDataLoader>)loader {
     self = [super init];
-    self.loader = loader;
+    if (self) {
+        self.loader = loader;
+    }
     return self;
 }
 

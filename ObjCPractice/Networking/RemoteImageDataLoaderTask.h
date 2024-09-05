@@ -10,7 +10,7 @@
 
 @interface RemoteImageDataLoaderTask : NSObject <ImageDataLoaderTask>
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithTask:(nonnull id<HTTPClientTask>)task;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithTask:(nonnull id<HTTPClientTask>)task;
 
 @end

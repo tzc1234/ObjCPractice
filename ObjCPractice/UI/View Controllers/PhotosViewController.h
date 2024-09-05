@@ -10,7 +10,7 @@
 
 @interface PhotosViewController : UITableViewController
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel;
 
 @end

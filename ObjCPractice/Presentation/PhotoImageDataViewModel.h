@@ -13,8 +13,8 @@
 @property (nullable, nonatomic, copy) void(^onLoadImageData)(BOOL isLoading);
 @property (nullable, nonatomic, copy) void(^didLoadImageData)(NSData * _Nullable data);
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithLoader:(nonnull id<ImageDataLoader>)loader;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithLoader:(nonnull id<ImageDataLoader>)loader;
 - (void)loadImageDataForURL:(nonnull NSURL *)url;
 - (void)cancelImageDataLoad;
 

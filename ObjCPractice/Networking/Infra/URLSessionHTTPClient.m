@@ -21,9 +21,11 @@ NSInteger const UnexpectedRepresentationErrorCode = 40;
 
 @synthesize session;
 
-- (nonnull instancetype)initWithSession:(nonnull NSURLSession *)session {
+- (nullable instancetype)initWithSession:(nonnull NSURLSession *)session {
     self = [super init];
-    self.session = session;
+    if (self) {
+        self.session = session;
+    }
     return self;
 }
 

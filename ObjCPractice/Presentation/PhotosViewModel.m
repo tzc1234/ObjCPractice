@@ -17,9 +17,11 @@
 
 @synthesize onLoad, onError, didLoad;
 
-- (nonnull instancetype)initWithLoader:(nonnull id<PhotosLoader>)loader {
+- (nullable instancetype)initWithLoader:(nonnull id<PhotosLoader>)loader {
     self = [super init];
-    self.loader = loader;
+    if (self) {
+        self.loader = loader;
+    }
     return self;
 }
 

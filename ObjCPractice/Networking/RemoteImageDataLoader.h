@@ -13,7 +13,7 @@ extern NSInteger const RemoteImageDataLoaderInvalidDataErrorCode;
 
 @interface RemoteImageDataLoader : NSObject <ImageDataLoader>
 
-- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nonnull instancetype)initWithClient:(nonnull id<HTTPClient>)client;
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithClient:(nonnull id<HTTPClient>)client;
 
 @end

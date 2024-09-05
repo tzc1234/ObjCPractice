@@ -21,9 +21,11 @@ NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
 
 @synthesize client;
 
-- (nonnull instancetype)initWithClient:(nonnull id<HTTPClient>)client {
+- (nullable instancetype)initWithClient:(nonnull id<HTTPClient>)client {
     self = [super init];
-    self.client = client;
+    if (self) {
+        self.client = client;
+    }
     return self;
 }
 
