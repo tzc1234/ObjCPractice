@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BE0A68842C88EE3C007B9DBF /* URLSessionHTTPClient.m */; };
 		BE15F7E92C89AA6900B4559A /* PhotosViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7E82C89AA6900B4559A /* PhotosViewModel.m */; };
+		BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */; };
 		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
@@ -26,6 +27,9 @@
 		BE15F7E52C8999E600B4559A /* PhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosLoader.h; sourceTree = "<group>"; };
 		BE15F7E72C89A7E300B4559A /* PhotosViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewModel.h; sourceTree = "<group>"; };
 		BE15F7E82C89AA6900B4559A /* PhotosViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewModel.m; sourceTree = "<group>"; };
+		BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoader.h; sourceTree = "<group>"; };
+		BE15F7EB2C89B17600B4559A /* RemoteImageDataLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteImageDataLoader.h; sourceTree = "<group>"; };
+		BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteImageDataLoader.m; sourceTree = "<group>"; };
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePhotosLoader.m; sourceTree = "<group>"; };
 		BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePhotosLoader.h; sourceTree = "<group>"; };
@@ -75,6 +79,9 @@
 				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
 				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
 				BE7AF7F72C88B81C00DA8BF3 /* Photo.m */,
+				BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */,
+				BE15F7EB2C89B17600B4559A /* RemoteImageDataLoader.h */,
+				BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -221,6 +228,7 @@
 			files = (
 				BE15F7E92C89AA6900B4559A /* PhotosViewModel.m in Sources */,
 				BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */,
+				BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */,
 				BE8379AE2C8867B600B785E3 /* PhotosViewController.m in Sources */,
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */,

@@ -9,6 +9,7 @@
 
 NSString * _Nonnull const URLSessionHTTPClientDomain = @"ObjCPractice.URLSessionHTTPClient";
 NSInteger const UnexpectedRepresentationErrorCode = 40;
+NSInteger const responseOK = 200;
 
 @interface URLSessionHTTPClient ()
 
