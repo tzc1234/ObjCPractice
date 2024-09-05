@@ -12,7 +12,6 @@
 @interface PhotosViewController ()
 
 @property (nonnull, nonatomic, strong) PhotosViewModel *viewModel;
-@property (nonnull, nonatomic, copy) UIRefreshControl *refreshControl;
 @property (nonnull, nonatomic, copy) NSArray *photos;
 @property (nonatomic) BOOL isInit;
 
