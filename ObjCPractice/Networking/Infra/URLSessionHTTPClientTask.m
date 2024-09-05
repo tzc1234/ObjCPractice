@@ -15,6 +15,8 @@
 
 @implementation URLSessionHTTPClientTask
 
+@synthesize task;
+
 - (nonnull instancetype)initWithTask:(nonnull NSURLSessionTask *)task {
     self = [super init];
     self.task = task;

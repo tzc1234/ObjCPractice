@@ -6,6 +6,7 @@
 //
 
 #import "RemoteImageDataLoader.h"
+#import "RemoteImageDataLoaderTask.h"
 
 NSString *const RemoteImageDataLoaderDomain = @"ObjCPractice.RemoteImageDataLoader";
 NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
@@ -26,9 +27,10 @@ NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
     return self;
 }
 
-- (void)loadImageDataForURL:(nonnull NSURL *)url completion:(nonnull ImageDataLoaderCompletion)completion { 
-    [self.client getFromURL:url 
-                 completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
+- (id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
+                                    completion:(nonnull ImageDataLoaderCompletion)completion {
+    id<HTTPClientTask> task = [self.client getFromURL:url
+                                           completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             return completion(nil, [self invalidError]);
         }
@@ -39,6 +41,7 @@ NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
         
         return completion(nil, [self invalidError]);
     }];
+    return [[RemoteImageDataLoaderTask alloc] initWithTask:task];
 }
 
 - (nonnull NSError *)invalidError {

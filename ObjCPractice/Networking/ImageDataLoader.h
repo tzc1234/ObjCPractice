@@ -9,8 +9,15 @@
 
 typedef void(^ImageDataLoaderCompletion)(NSData * _Nullable data, NSError * _Nullable error);
 
+@protocol ImageDataLoaderTask
+
+- (void)cancel;
+
+@end
+
 @protocol ImageDataLoader
 
-- (void)loadImageDataForURL:(nonnull NSURL *)url completion:(nonnull ImageDataLoaderCompletion)completion;
+- (nonnull id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url
+                                            completion:(nonnull ImageDataLoaderCompletion)completion;
 
 @end
