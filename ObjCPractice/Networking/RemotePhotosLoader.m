@@ -8,7 +8,7 @@
 #import "RemotePhotosLoader.h"
 #import "Photo.h"
 
-NSString * const RemotePhotosLoaderDomain = @"ObjCPractice.RemotePhotosLoader";
+NSString *const RemotePhotosLoaderDomain = @"ObjCPractice.RemotePhotosLoader";
 NSInteger const ConnectivityErrorErrorCode = 41;
 NSInteger const InvalidDataErrorCode = 42;
 
@@ -21,7 +21,7 @@ NSInteger const InvalidDataErrorCode = 42;
 
 @implementation RemotePhotosLoader
 
-const NSInteger ok = 200;
+NSInteger const responseOK = 200;
 
 - (nonnull instancetype)initWithURL:(nonnull NSURL *)url client:(nonnull id<HTTPClient>) client {
     self = [super init];
@@ -30,14 +30,14 @@ const NSInteger ok = 200;
     return self;
 }
 
-- (void)loadWithCompletion:(void (^ _Nonnull)(NSArray * _Nullable photos, NSError * _Nullable error))completion {
+- (void)loadWithCompletion:(nonnull PhotosLoaderCompletion)completion {
     [self.client getFromURL:self.url
                  completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             return completion(nil, [self connectivityError]);
         }
         
-        if (response.statusCode != ok || !data) {
+        if (response.statusCode != responseOK || !data) {
             return completion(nil, [self invalidDataError]);
         }
         

@@ -26,8 +26,7 @@ NSInteger const UnexpectedRepresentationErrorCode = 40;
     return self;
 }
 
-- (void)getFromURL:(nonnull NSURL *)url 
-        completion:(void (^ _Nonnull)(NSData * _Nullable, NSHTTPURLResponse * _Nullable, NSError * _Nullable))completion {
+- (void)getFromURL:(nonnull NSURL *)url completion:(nonnull HTTPClientCompletion)completion {
     NSURLSessionDataTask *task = [self.session dataTaskWithURL:url
                                              completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (data && [response isMemberOfClass:[NSHTTPURLResponse class]]) {
