@@ -11,8 +11,14 @@ extern NSInteger const responseOK;
 
 typedef void(^HTTPClientCompletion)(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error);
 
+@protocol HTTPClientTask
+
+-(void)cancel;
+
+@end
+
 @protocol HTTPClient
 
-- (void)getFromURL:(nonnull NSURL *)url completion:(nonnull HTTPClientCompletion)completion;
+- (nonnull id<HTTPClientTask>)getFromURL:(nonnull NSURL *)url completion:(nonnull HTTPClientCompletion)completion;
 
 @end
