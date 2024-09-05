@@ -6,6 +6,9 @@
 //
 
 #import "SceneDelegate.h"
+#import "URLSessionHTTPClient.h"
+#import "RemotePhotosLoader.h"
+#import "PhotosViewModel.h"
 #import "PhotosViewController.h"
 
 @interface SceneDelegate ()
@@ -24,7 +27,12 @@
     
     window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
-    PhotosViewController *controller = [[PhotosViewController alloc] init];
+    NSURL *url = [[NSURL alloc] initWithString:@"https://picsum.photos/v2/list"];
+    URLSessionHTTPClient *client = [[URLSessionHTTPClient alloc] initWithSession:NSURLSession.sharedSession];
+    RemotePhotosLoader *loader = [[RemotePhotosLoader alloc] initWithURL:url client:client];
+    PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:loader];
+    PhotosViewController *controller = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
+    
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
     [window makeKeyAndVisible];
 }

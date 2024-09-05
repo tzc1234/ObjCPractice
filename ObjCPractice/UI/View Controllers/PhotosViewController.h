@@ -6,9 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhotosViewModel.h"
 
 @interface PhotosViewController : UITableViewController
 
+- (nonnull instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nonnull instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel;
 
 @end
-

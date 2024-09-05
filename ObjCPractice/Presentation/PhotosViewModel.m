@@ -27,14 +27,16 @@
     onLoad(YES);
     
     [self.loader loadWithCompletion:^(NSArray * _Nullable photos, NSError * _Nullable error) {
-        if (error) {
-            self.onError(@"Error occurred, please try again.");
-        } else {
-            self.didLoad(photos ?: [NSArray array]);
-            self.onError(nil);
-        }
-        
-        self.onLoad(NO);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error) {
+                self.onError(@"Error occurred, please try again.");
+            } else {
+                self.didLoad(photos ?: [NSArray array]);
+                self.onError(nil);
+            }
+            
+            self.onLoad(NO);
+        });
     }];
 }
 
