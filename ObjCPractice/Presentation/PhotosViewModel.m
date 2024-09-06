@@ -29,7 +29,7 @@
     if (onLoad)
         onLoad(YES);
     
-    [self.loader loadWithCompletion:^(NSArray * _Nullable photos, NSError * _Nullable error) {
+    [self.loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 if (self->onError)

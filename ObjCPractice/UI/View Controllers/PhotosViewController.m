@@ -13,7 +13,7 @@
 @interface PhotosViewController ()
 
 @property (nonnull, nonatomic, strong) PhotosViewModel *viewModel;
-@property (nonnull, nonatomic, copy) NSArray *photoCellController;
+@property (nonnull, nonatomic, copy) NSArray<PhotoCellController *> *photoCellController;
 @property (nonatomic) BOOL isInit;
 
 @end
@@ -27,7 +27,7 @@
     if (self) {
         self.title = @"Photos";
         self.viewModel = viewModel;
-        self.photoCellController = [NSArray array];
+        self.photoCellController = [NSArray<PhotoCellController *> array];
         self.isInit = YES;
     }
     return self;
@@ -56,7 +56,7 @@
     return refresh;
 }
 
-- (void)display:(nonnull NSArray *)photoCellControllers {
+- (void)display:(nonnull NSArray<PhotoCellController *> *)photoCellControllers {
     self.photoCellController = photoCellControllers;
     [self.tableView reloadData];
 }

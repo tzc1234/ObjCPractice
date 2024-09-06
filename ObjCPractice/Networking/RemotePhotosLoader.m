@@ -42,7 +42,7 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
         }
         
         NSError *invalidDataError = nil;
-        NSArray *photos = [self parsePhotosFromData:data withError:&invalidDataError];
+        NSArray<Photo *> *photos = [self parsePhotosFromData:data withError:&invalidDataError];
         
         if (invalidDataError) {
             return completion(nil, invalidDataError);
@@ -52,25 +52,25 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
     }];
 }
 
-- (NSArray *)parsePhotosFromData:(NSData *)data withError:(NSError **)jsonError {
+- (NSArray<Photo *> *)parsePhotosFromData:(NSData *)data withError:(NSError **)jsonError {
     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:jsonError];
     if (jsonError && [json isKindOfClass:[NSArray class]] == NO) {
         *jsonError = [self invalidDataError];
-        return [NSArray array];
+        return [NSArray<Photo *> array];
     }
     
-    NSMutableArray *photos = [NSMutableArray array];
+    NSMutableArray<Photo *> *photos = [NSMutableArray<Photo *> array];
     NSArray *results = json;
     
-    for (NSDictionary *d in results) {
-        NSString *ID = d[@"id"];
-        NSString *author = d[@"author"];
-        NSString *webURLStr = d[@"url"];
-        NSString *urlStr = d[@"download_url"];
+    for (NSDictionary *dict in results) {
+        NSString *ID = dict[@"id"];
+        NSString *author = dict[@"author"];
+        NSString *webURLStr = dict[@"url"];
+        NSString *urlStr = dict[@"download_url"];
         
         if (!ID || !author || !webURLStr || !urlStr) {
             *jsonError = [self invalidDataError];
-            return [NSArray array];
+            return [NSArray<Photo *> array];
         }
         
         NSURL *webURL = [[NSURL alloc] initWithString:webURLStr];
@@ -78,11 +78,11 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
         
         if (!webURL || !url) {
             *jsonError = [self invalidDataError];
-            return [NSArray array];
+            return [NSArray<Photo *> array];
         }
         
-        NSInteger width = [d[@"width"] integerValue];
-        NSInteger height = [d[@"height"] integerValue];
+        NSInteger width = [dict[@"width"] integerValue];
+        NSInteger height = [dict[@"height"] integerValue];
         
         Photo *photo = [[Photo alloc] initWithID:ID author:author width:width height:height webURL:webURL url:url];
         [photos addObject:photo];

@@ -19,7 +19,7 @@
     PhotosViewController *photosViewController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     [PhotoCellController registerCellFor:photosViewController.tableView];
     
-    photosViewModel.didLoad = ^(NSArray * _Nullable photos) {
+    photosViewModel.didLoad = ^(NSArray<Photo *> * _Nullable photos) {
         NSMutableArray *cellControllers = [NSMutableArray array];
         
         for (Photo *photo in photos) {

@@ -6,8 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Photo.h"
 
-typedef void(^PhotosLoaderCompletion)(NSArray * _Nullable photos, NSError * _Nullable error);
+typedef void(^PhotosLoaderCompletion)(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error);
 
 @protocol PhotosLoader
 
