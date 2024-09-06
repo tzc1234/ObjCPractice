@@ -9,6 +9,6 @@
 
 @interface ShimmeringView : UIView
 
-@property (nonatomic, getter=getShimmeringStatus, setter=setShimmingStatus:) BOOL isShimmering;
+@property (nonatomic) BOOL isShimmering;
 
 @end

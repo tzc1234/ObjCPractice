@@ -11,12 +11,12 @@
 
 NSString *const ShimmerAnimationKey = @"shimmer";
 
-- (BOOL)getShimmeringStatus {
+- (BOOL)isShimmering {
     return [self.layer.mask.animationKeys containsObject:ShimmerAnimationKey];
 }
 
-- (void)setShimmingStatus:(BOOL)status {
-    status ? [self startShimmering] : [self stopShimmering];
+- (void)setIsShimmering:(BOOL)isShimmering {
+    isShimmering ? [self startShimmering] : [self stopShimmering];
 }
 
 - (void)layoutSubviews {
