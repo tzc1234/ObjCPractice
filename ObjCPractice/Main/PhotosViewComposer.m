@@ -9,12 +9,14 @@
 #import "PhotosViewModel.h"
 #import "PhotoCellController.h"
 #import "RemoteImageDataLoader.h"
+#import "DispatchToMainQueueDecorator.h"
 
 @implementation PhotosViewComposer
 
 + (PhotosViewController *)composeWithPhotoLoader:(id<PhotosLoader>)photoLoader 
                                  imageDataLoader:(id<ImageDataLoader>)imageDataLoader {
-    PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:photoLoader];
+    DispatchToMainQueueDecorator *decoratedPhotoLoader = [[DispatchToMainQueueDecorator alloc] initWithDecoratee:photoLoader];
+    PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:decoratedPhotoLoader];
     
     PhotosViewController *photosViewController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     [PhotoCellController registerCellFor:photosViewController.tableView];

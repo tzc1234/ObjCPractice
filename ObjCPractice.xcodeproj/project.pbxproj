@@ -26,6 +26,7 @@
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
 		BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */; };
+		BE99AEC42C8B74F3005A6201 /* DispatchToMainQueueDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderTask.h; sourceTree = "<group>"; };
 		BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewComposer.h; sourceTree = "<group>"; };
 		BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewComposer.m; sourceTree = "<group>"; };
+		BE99AEC22C8B74D6005A6201 /* DispatchToMainQueueDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchToMainQueueDecorator.h; sourceTree = "<group>"; };
+		BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchToMainQueueDecorator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
 				BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */,
 				BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */,
+				BE99AEC22C8B74D6005A6201 /* DispatchToMainQueueDecorator.h */,
+				BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */,
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
 				BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */,
+				BE99AEC42C8B74F3005A6201 /* DispatchToMainQueueDecorator.m in Sources */,
 				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
 				BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */,
 			);

@@ -11,10 +11,6 @@
 #import "RemoteImageDataLoader.h"
 #import "PhotosViewComposer.h"
 
-@interface SceneDelegate ()
-
-@end
-
 @implementation SceneDelegate
 
 @synthesize window;
