@@ -6,7 +6,7 @@
 //
 
 #import "PhotosViewController.h"
-#import "ImageCell.h"
+#import "PhotoCell.h"
 #import "Photo.h"
 
 @interface PhotosViewController ()
@@ -35,9 +35,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.refreshControl = [self makeRefreshControl];
+    self.refreshControl = [self makeRefreshControl];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[ImageCell class] forCellReuseIdentifier:ImageCell.cellID];
+    [self.tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCell.cellID];
     [self setupBindings];
 }
 
@@ -86,7 +86,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ImageCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCell.cellID];
+    PhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:PhotoCell.cellID];
     Photo *photo = self.photos[indexPath.row];
     cell.titleLabel.text = photo.author;
     return cell;

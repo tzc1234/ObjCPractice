@@ -22,7 +22,7 @@
 		BE8379B32C8867B700B785E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B22C8867B700B785E3 /* Assets.xcassets */; };
 		BE8379B62C8867B700B785E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B52C8867B700B785E3 /* Base */; };
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
-		BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* ImageCell.m */; };
+		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,8 +57,8 @@
 		BE8379B52C8867B700B785E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE8379B72C8867B700B785E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE8379B82C8867B700B785E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BE8379C22C886FB800B785E3 /* ImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
-		BE8379C32C886FEB00B785E3 /* ImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		BE8379C22C886FB800B785E3 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
+		BE8379C32C886FEB00B785E3 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +185,8 @@
 		BE8379C12C886F9400B785E3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BE8379C22C886FB800B785E3 /* ImageCell.h */,
-				BE8379C32C886FEB00B785E3 /* ImageCell.m */,
+				BE8379C22C886FB800B785E3 /* PhotoCell.h */,
+				BE8379C32C886FEB00B785E3 /* PhotoCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */,
 				BE8379AE2C8867B600B785E3 /* PhotosViewController.m in Sources */,
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
-				BE8379C42C886FEB00B785E3 /* ImageCell.m in Sources */,
+				BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,

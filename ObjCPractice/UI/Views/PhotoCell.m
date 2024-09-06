@@ -1,13 +1,13 @@
 //
-//  ImageCell.m
+//  PhotoCell.m
 //  ObjCPractice
 //
 //  Created by Tsz-Lung on 04/09/2024.
 //
 
-#import "ImageCell.h"
+#import "PhotoCell.h"
 
-@interface ImageCell ()
+@interface PhotoCell ()
 
 @property (strong, nonatomic) UIView *shadowBGView;
 @property (strong, nonatomic) UIImageView *placeholderView;
@@ -15,7 +15,7 @@
 
 @end
 
-@implementation ImageCell
+@implementation PhotoCell
 
 @synthesize shadowBGView, containerView, photoView, placeholderView, blurView, titleLabel;
 
