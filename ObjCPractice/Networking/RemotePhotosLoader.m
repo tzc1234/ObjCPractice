@@ -37,7 +37,7 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
             return completion(nil, [self connectivityError]);
         }
         
-        if (response.statusCode != responseOK || !data) {
+        if (response.statusCode != HTTPURLResponseOK || !data) {
             return completion(nil, [self invalidDataError]);
         }
         

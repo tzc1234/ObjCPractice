@@ -7,4 +7,4 @@
 
 #import "HTTPClient.h"
 
-NSInteger const responseOK = 200;
+NSInteger const HTTPURLResponseOK = 200;

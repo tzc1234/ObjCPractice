@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "HTTPClientTask.h"
 
-extern NSInteger const responseOK;
+extern NSInteger const HTTPURLResponseOK;
 
 typedef void(^HTTPClientCompletion)(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error);
 
