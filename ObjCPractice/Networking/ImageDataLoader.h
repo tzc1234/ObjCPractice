@@ -6,14 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ImageDataLoaderTask.h"
 
 typedef void(^ImageDataLoaderCompletion)(NSData * _Nullable data, NSError * _Nullable error);
-
-@protocol ImageDataLoaderTask
-
-- (void)cancel;
-
-@end
 
 @protocol ImageDataLoader
 

@@ -31,8 +31,8 @@ NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
 
 - (id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
                                     completion:(nonnull ImageDataLoaderCompletion)completion {
-    id<HTTPClientTask> task = [self.client getFromURL:url
-                                           completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
+    id<HTTPClientTask> task = [client getFromURL:url
+                                      completion:^(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
         if (error) {
             return completion(nil, [self invalidError]);
         }

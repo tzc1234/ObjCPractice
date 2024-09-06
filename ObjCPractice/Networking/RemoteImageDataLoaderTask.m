@@ -26,7 +26,7 @@
 }
 
 - (void)cancel { 
-    [self.task cancel];
+    [task cancel];
 }
 
 @end

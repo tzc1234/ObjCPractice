@@ -62,13 +62,13 @@
 }
 
 - (void)reloadPhotos {
-    [self.viewModel loadPhotos];
+    [viewModel loadPhotos];
 }
 
 - (void)setupBindings {
     __weak PhotosViewController *weakSelf = self;
     
-    self.viewModel.onLoad = ^(BOOL isLoading) {
+    viewModel.onLoad = ^(BOOL isLoading) {
         if (isLoading) {
             [weakSelf.tableView.refreshControl beginRefreshing];
         } else {

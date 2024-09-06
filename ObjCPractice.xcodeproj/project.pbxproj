@@ -66,6 +66,7 @@
 		BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClientTask.h; sourceTree = "<group>"; };
 		BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShimmeringView.m; sourceTree = "<group>"; };
 		BE99AEBB2C8B4E78005A6201 /* ShimmeringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShimmeringView.h; sourceTree = "<group>"; };
+		BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 				BE15F7E52C8999E600B4559A /* PhotosLoader.h */,
 				BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */,
 				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
+				BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */,
 				BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */,
 				BE15F7F62C89CC6A00B4559A /* RemoteImageDataLoaderTask.h */,
 				BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */,
