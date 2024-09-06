@@ -63,7 +63,7 @@
     __weak PhotoCellController *weakSelf = self;
     
     viewModel.onLoadImageData = ^(BOOL isLoading) {
-//        NSLog(@"isLoading: %i", isLoading);
+        weakSelf.cell.containerView.isShimmering = isLoading;
     };
     
     viewModel.didLoadImageData = ^(NSData * _Nullable data) {

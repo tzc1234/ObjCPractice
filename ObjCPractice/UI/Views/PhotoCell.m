@@ -6,6 +6,7 @@
 //
 
 #import "PhotoCell.h"
+#import "ShimmeringView.h"
 
 @interface PhotoCell ()
 
@@ -97,8 +98,8 @@
 }
 
 - (void)setupContainerView {
-    containerView = [[UIView alloc] init];
-    containerView.backgroundColor = UIColor.systemGray5Color;
+    containerView = [[ShimmeringView alloc] init];
+    containerView.backgroundColor = UIColor.systemGray4Color;
     containerView.layer.cornerRadius = 6;
     containerView.layer.borderWidth = 1;
     containerView.layer.borderColor = UIColor.tertiaryLabelColor.CGColor;

@@ -6,12 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShimmeringView.h"
 
 @interface PhotoCell : UITableViewCell
 
 @property (class, readonly, nonatomic) NSString *cellID;
 
-@property (strong, nonatomic) UIView *containerView;
+@property (strong, nonatomic) ShimmeringView *containerView;
 @property (strong, nonatomic) UIImageView *photoView;
 @property (strong, nonatomic) UILabel *titleLabel;
 

@@ -24,6 +24,7 @@
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
 		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
+		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,8 @@
 		BE99AEB52C8AEDB9005A6201 /* PhotoCellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCellController.h; sourceTree = "<group>"; };
 		BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCellController.m; sourceTree = "<group>"; };
 		BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClientTask.h; sourceTree = "<group>"; };
+		BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShimmeringView.m; sourceTree = "<group>"; };
+		BE99AEBB2C8B4E78005A6201 /* ShimmeringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShimmeringView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 			children = (
 				BE8379C22C886FB800B785E3 /* PhotoCell.h */,
 				BE8379C32C886FEB00B785E3 /* PhotoCell.m */,
+				BE99AEBB2C8B4E78005A6201 /* ShimmeringView.h */,
+				BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
+				BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
