@@ -10,6 +10,9 @@
 #import "RemotePhotosLoader.h"
 #import "PhotosViewModel.h"
 #import "PhotosViewController.h"
+#import "RemoteImageDataLoader.h"
+#import "PhotoImageDataViewModel.h"
+#import "PhotoCellController.h"
 
 @interface SceneDelegate ()
 
@@ -31,9 +34,26 @@
     URLSessionHTTPClient *client = [[URLSessionHTTPClient alloc] initWithSession:NSURLSession.sharedSession];
     RemotePhotosLoader *loader = [[RemotePhotosLoader alloc] initWithURL:url client:client];
     PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:loader];
-    PhotosViewController *controller = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     
-    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+    PhotosViewController *photoController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
+    [PhotoCellController registerCellFor:photoController.tableView];
+    
+    RemoteImageDataLoader *imageDataLoader = [[RemoteImageDataLoader alloc] initWithClient:client];
+    
+    photosViewModel.didLoad = ^(NSArray * _Nullable photos) {
+        NSMutableArray *cellControllers = [NSMutableArray array];
+        
+        for (Photo *photo in photos) {
+            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:imageDataLoader];
+            PhotoCellController *controller = [[PhotoCellController alloc] initWithViewModel:model andPhoto:photo];
+            [cellControllers addObject:controller];
+        }
+        
+        [photoController display:cellControllers];
+    };
+    
+    
+    window.rootViewController = [[UINavigationController alloc] initWithRootViewController:photoController];
     [window makeKeyAndVisible];
 }
 

@@ -23,6 +23,7 @@
 		BE8379B62C8867B700B785E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B52C8867B700B785E3 /* Base */; };
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
 		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
+		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,9 @@
 		BE8379B82C8867B700B785E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE8379C22C886FB800B785E3 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		BE8379C32C886FEB00B785E3 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		BE99AEB52C8AEDB9005A6201 /* PhotoCellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCellController.h; sourceTree = "<group>"; };
+		BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCellController.m; sourceTree = "<group>"; };
+		BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClientTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,7 @@
 		BE7AF7F22C88B08A00DA8BF3 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */,
 				BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */,
 				BE15F7EE2C89B85200B4559A /* HTTPClient.m */,
 				BE15F7F32C89C80300B4559A /* URLSessionHTTPClientTask.h */,
@@ -169,6 +174,8 @@
 			children = (
 				BE8379AC2C8867B600B785E3 /* PhotosViewController.h */,
 				BE8379AD2C8867B600B785E3 /* PhotosViewController.m */,
+				BE99AEB52C8AEDB9005A6201 /* PhotoCellController.h */,
+				BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
 				BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */,
 				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
+				BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 
 @interface RemoteImageDataLoaderTask ()
 
-@property (nonnull, nonatomic, copy) id<HTTPClientTask> task;
+@property (nonnull, nonatomic, strong) id<HTTPClientTask> task;
 
 @end
 

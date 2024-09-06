@@ -6,16 +6,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HTTPClientTask.h"
 
 extern NSInteger const responseOK;
 
 typedef void(^HTTPClientCompletion)(NSData * _Nullable data, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error);
-
-@protocol HTTPClientTask
-
--(void)cancel;
-
-@end
 
 @protocol HTTPClient
 

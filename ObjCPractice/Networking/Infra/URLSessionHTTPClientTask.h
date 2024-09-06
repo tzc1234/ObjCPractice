@@ -5,7 +5,7 @@
 //  Created by Tsz-Lung on 05/09/2024.
 //
 
-#import "HTTPClient.h"
+#import "HTTPClientTask.h"
 
 @interface URLSessionHTTPClientTask : NSObject <HTTPClientTask>
 

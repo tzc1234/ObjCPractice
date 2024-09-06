@@ -12,5 +12,6 @@
 
 - (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
 - (nullable instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel;
+- (void)display:(nonnull NSArray *)photoCellControllers;
 
 @end

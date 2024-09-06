@@ -8,25 +8,26 @@
 #import "PhotosViewController.h"
 #import "PhotoCell.h"
 #import "Photo.h"
+#import "PhotoCellController.h"
 
 @interface PhotosViewController ()
 
 @property (nonnull, nonatomic, strong) PhotosViewModel *viewModel;
-@property (nonatomic, copy) NSArray *photos;
+@property (nonnull, nonatomic, copy) NSArray *photoCellController;
 @property (nonatomic) BOOL isInit;
 
 @end
 
 @implementation PhotosViewController
 
-@synthesize viewModel, photos, isInit;
+@synthesize viewModel, photoCellController, isInit;
 
 - (nullable instancetype)initWithViewModel:(nonnull PhotosViewModel *)viewModel {
     self = [super init];
     if (self) {
         self.title = @"Photos";
         self.viewModel = viewModel;
-        self.photos = [NSArray array];
+        self.photoCellController = [NSArray array];
         self.isInit = YES;
     }
     return self;
@@ -37,7 +38,6 @@
     
     self.refreshControl = [self makeRefreshControl];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    [self.tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCell.cellID];
     [self setupBindings];
 }
 
@@ -56,6 +56,11 @@
     return refresh;
 }
 
+- (void)display:(nonnull NSArray *)photoCellControllers {
+    self.photoCellController = photoCellControllers;
+    [self.tableView reloadData];
+}
+
 - (void)reloadPhotos {
     [self.viewModel loadPhotos];
 }
@@ -71,25 +76,18 @@
         }
     };
     
-    self.viewModel.didLoad = ^(NSArray * _Nullable photos) {
-        weakSelf.photos = photos ?: [NSArray array];
-        [weakSelf.tableView reloadData];
-    };
-    
     self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
-        NSLog(@"error: %@", errorMessage);
+//        NSLog(@"error: %@", errorMessage);
     };
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.photos.count;
+    return self.photoCellController.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:PhotoCell.cellID];
-    Photo *photo = self.photos[indexPath.row];
-    cell.titleLabel.text = photo.author;
-    return cell;
+    PhotoCellController *cellController = self.photoCellController[indexPath.row];
+    return [cellController cellFor:tableView];
 }
 
 @end
