@@ -44,8 +44,8 @@
         NSMutableArray *cellControllers = [NSMutableArray array];
         
         for (Photo *photo in photos) {
-            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:imageDataLoader];
-            PhotoCellController *controller = [[PhotoCellController alloc] initWithViewModel:model andPhoto:photo];
+            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:imageDataLoader andPhoto:photo];
+            PhotoCellController *controller = [[PhotoCellController alloc] initWithViewModel:model andAuthor:photo.author];
             [cellControllers addObject:controller];
         }
         

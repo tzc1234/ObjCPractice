@@ -11,23 +11,22 @@
 @interface PhotoCellController ()
 
 @property (nonnull, nonatomic, strong) PhotoImageDataViewModel *viewModel;
-@property (nonnull, nonatomic, strong) Photo *photo;
 @property (nullable, nonatomic, strong) PhotoCell *cell;
 
 @end
 
 @implementation PhotoCellController
 
-@synthesize viewModel, cell, photo;
+@synthesize viewModel, cell;
 
 + (void)registerCellFor:(nonnull UITableView *)tableView {
     [tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCell.cellID];
 }
 
-- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andPhoto:(nonnull Photo *)photo {
+- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andAuthor:(nonnull NSString *)author {
     self = [super init];
     self.viewModel = viewModel;
-    self.photo = photo;
+    _author = author;
     return self;
 }
 
@@ -54,7 +53,7 @@
 }
 
 - (void)configureCell {
-    cell.titleLabel.text = photo.author;
+    cell.titleLabel.text = self.author;
     cell.photoView.image = nil;
     [self setupBindings];
     [self loadImageData];
@@ -75,7 +74,7 @@
 }
 
 - (void)loadImageData {
-    [viewModel loadImageDataForURL:photo.url];
+    [viewModel loadImageData];
 }
 
 - (void)cancelImageDataLoad {

@@ -7,14 +7,15 @@
 
 #import <UIKit/UIKit.h>
 #import "PhotoImageDataViewModel.h"
-#import "Photo.h"
 
 @interface PhotoCellController : NSObject
+
+@property (nonnull, readonly) NSString *author;
 
 + (void)registerCellFor:(nonnull UITableView *)tableView;
 
 - (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andPhoto:(nonnull Photo *)photo;
+- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andAuthor:(nonnull NSString *)author;
 - (nullable UITableViewCell *)cellFor:(nonnull UITableView *)tableView;
 - (void)configure:(nonnull UITableViewCell *)cell;
 - (void)loadImageData;
