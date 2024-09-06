@@ -43,3 +43,18 @@
 }
 
 @end
+
+@implementation DispatchToMainQueueDecorator (ImageDataLoader)
+
+- (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url completion:(nonnull ImageDataLoaderCompletion)completion {
+    if (![decoratee conformsToProtocol:@protocol(ImageDataLoader)]) {
+        return nil;
+    }
+    
+    id<ImageDataLoader> imageDataLoader = (id<ImageDataLoader>)decoratee;
+    return [imageDataLoader loadImageDataForURL:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+        [self dispatch:^{ completion(data, error); }];
+    }];
+}
+
+@end

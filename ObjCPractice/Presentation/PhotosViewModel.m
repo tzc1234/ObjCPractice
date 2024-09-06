@@ -15,7 +15,7 @@
 
 @implementation PhotosViewModel
 
-@synthesize onLoad, onError, didLoad;
+@synthesize onLoad, onError, didLoad, loader;
 
 - (nullable instancetype)initWithLoader:(nonnull id<PhotosLoader>)loader {
     self = [super init];
@@ -29,7 +29,7 @@
     if (onLoad)
         onLoad(YES);
     
-    [self.loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
+    [loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
         if (error) {
             if (self->onError)
                 self.onError(@"Error occurred, please try again.");

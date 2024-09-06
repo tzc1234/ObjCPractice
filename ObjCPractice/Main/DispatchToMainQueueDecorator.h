@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PhotosLoader.h"
+#import "ImageDataLoader.h"
 
 @interface DispatchToMainQueueDecorator : NSObject
 
@@ -19,4 +20,7 @@
 @end
 
 @interface DispatchToMainQueueDecorator (PhotosLoader) <PhotosLoader>
+@end
+
+@interface DispatchToMainQueueDecorator (ImageDataLoader) <ImageDataLoader>
 @end

@@ -21,11 +21,13 @@
     PhotosViewController *photosViewController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     [PhotoCellController registerCellFor:photosViewController.tableView];
     
+    DispatchToMainQueueDecorator *decoratedImageDataLoader = [[DispatchToMainQueueDecorator alloc] initWithDecoratee:imageDataLoader];
+    
     photosViewModel.didLoad = ^(NSArray<Photo *> * _Nullable photos) {
-        NSMutableArray *cellControllers = [NSMutableArray array];
+        NSMutableArray<PhotoCellController *> *cellControllers = [NSMutableArray<PhotoCellController *> array];
         
         for (Photo *photo in photos) {
-            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:imageDataLoader andPhoto:photo];
+            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:decoratedImageDataLoader andPhoto:photo];
             PhotoCellController *controller = [[PhotoCellController alloc] initWithViewModel:model andAuthor:photo.author];
             [cellControllers addObject:controller];
         }

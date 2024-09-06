@@ -12,7 +12,7 @@ typedef void(^ImageDataLoaderCompletion)(NSData * _Nullable data, NSError * _Nul
 
 @protocol ImageDataLoader
 
-- (nonnull id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url
+- (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url
                                             completion:(nonnull ImageDataLoaderCompletion)completion;
 
 @end

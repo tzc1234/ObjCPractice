@@ -34,13 +34,11 @@
         onLoadImageData(YES);
     
     self.task = [loader loadImageDataForURL:[self photoURL] completion:^(NSData * _Nullable data, NSError * _Nullable error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (self->didLoadImageData)
-                self.didLoadImageData(data);
-            
-            if (self->onLoadImageData)
-                self.onLoadImageData(NO);
-        });
+        if (self->didLoadImageData)
+            self.didLoadImageData(data);
+        
+        if (self->onLoadImageData)
+            self.onLoadImageData(NO);
     }];
 }
 
