@@ -67,9 +67,7 @@
     };
     
     viewModel.didLoadImageData = ^(NSData * _Nullable data) {
-        if (data) {
-            weakSelf.cell.photoView.image = [[UIImage alloc] initWithData:data];
-        }
+        weakSelf.cell.photoView.image = [[UIImage alloc] initWithData:data];
     };
 }
 

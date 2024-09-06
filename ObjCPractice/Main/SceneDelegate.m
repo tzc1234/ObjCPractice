@@ -52,7 +52,6 @@
         [photoController display:cellControllers];
     };
     
-    
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController:photoController];
     [window makeKeyAndVisible];
 }

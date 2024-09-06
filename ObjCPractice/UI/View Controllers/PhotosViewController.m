@@ -44,8 +44,8 @@
 - (void)viewIsAppearing:(BOOL)animated {
     [super viewIsAppearing:animated];
     
-    if (self.isInit) {
-        self.isInit = NO;
+    if (isInit) {
+        isInit = NO;
         [self reloadPhotos];
     }
 }
@@ -76,18 +76,30 @@
         }
     };
     
-    self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
+// TODO: Error Handling
+//    self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
 //        NSLog(@"error: %@", errorMessage);
-    };
+//    };
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.photoCellController.count;
+    return photoCellController.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PhotoCellController *cellController = self.photoCellController[indexPath.row];
-    return [cellController cellFor:tableView];
+    return [[self cellControllerForRowAtIndexPath:indexPath] cellFor:tableView];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[self cellControllerForRowAtIndexPath:indexPath] configure:cell];
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [[self cellControllerForRowAtIndexPath:indexPath] cancelImageDataLoad];
+}
+
+- (PhotoCellController *)cellControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return photoCellController[indexPath.row];
 }
 
 @end

@@ -26,18 +26,24 @@
 }
 
 - (void)loadPhotos {
-    onLoad(YES);
+    if (onLoad)
+        onLoad(YES);
     
     [self.loader loadWithCompletion:^(NSArray * _Nullable photos, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
-                self.onError(@"Error occurred, please try again.");
+                if (self->onError)
+                    self.onError(@"Error occurred, please try again.");
             } else {
-                self.didLoad(photos);
-                self.onError(nil);
+                if (self->didLoad)
+                    self.didLoad(photos);
+                
+                if (self->onError)
+                    self.onError(nil);
             }
             
-            self.onLoad(NO);
+            if (self->onLoad)
+                self.onLoad(NO);
         });
     }];
 }
