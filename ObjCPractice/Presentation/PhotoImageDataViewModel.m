@@ -32,7 +32,7 @@
 - (void)loadImageData {
     self.onLoadImageData(YES);
     
-    self.task = [self.loader loadImageDataForURL:self.photo.url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    self.task = [self.loader loadImageDataForURL:[self photoURL] completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         dispatch_async(dispatch_get_main_queue(), ^{
             self.didLoadImageData(data);
             self.onLoadImageData(NO);
@@ -43,6 +43,14 @@
 - (void)cancelImageDataLoad {
     [self.task cancel];
     self.task = nil;
+}
+
+- (NSURL *)photoURL {
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+    components.scheme = self.photo.url.scheme;
+    components.host = self.photo.url.host;
+    components.path = [NSString stringWithFormat:@"/id/%@/1280/720", self.photo.ID];
+    return components.URL;
 }
 
 @end
