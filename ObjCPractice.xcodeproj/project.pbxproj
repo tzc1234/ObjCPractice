@@ -25,6 +25,7 @@
 		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
+		BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShimmeringView.m; sourceTree = "<group>"; };
 		BE99AEBB2C8B4E78005A6201 /* ShimmeringView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShimmeringView.h; sourceTree = "<group>"; };
 		BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderTask.h; sourceTree = "<group>"; };
+		BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewComposer.h; sourceTree = "<group>"; };
+		BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewComposer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				BE8379A72C8867B600B785E3 /* AppDelegate.m */,
 				BE8379A92C8867B600B785E3 /* SceneDelegate.h */,
 				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
+				BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */,
+				BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 				BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,
+				BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */,
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
 				BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */,
 				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
