@@ -6,9 +6,6 @@
 //
 
 #import "PhotosViewComposer.h"
-#import "PhotosViewModel.h"
-#import "PhotoCellController.h"
-#import "RemoteImageDataLoader.h"
 #import "ImageDataLoaderDispatchToMainDecorator.h"
 #import "PhotosLoaderDispatchToMainDecorator.h"
 
