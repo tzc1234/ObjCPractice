@@ -9,19 +9,21 @@
 #import "PhotosViewModel.h"
 #import "PhotoCellController.h"
 #import "RemoteImageDataLoader.h"
-#import "DispatchToMainQueueDecorator.h"
+#import "ImageDataLoaderDispatchToMainDecorator.h"
+#import "PhotosLoaderDispatchToMainDecorator.h"
 
 @implementation PhotosViewComposer
 
 + (PhotosViewController *)composeWithPhotoLoader:(id<PhotosLoader>)photoLoader 
                                  imageDataLoader:(id<ImageDataLoader>)imageDataLoader {
-    DispatchToMainQueueDecorator *decoratedPhotoLoader = [[DispatchToMainQueueDecorator alloc] initWithDecoratee:photoLoader];
+    PhotosLoaderDispatchToMainDecorator *decoratedPhotoLoader = [[PhotosLoaderDispatchToMainDecorator alloc] 
+                                                                 initWithDecoratee:photoLoader];
     PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:decoratedPhotoLoader];
-    
     PhotosViewController *photosViewController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     [PhotoCellController registerCellFor:photosViewController.tableView];
     
-    DispatchToMainQueueDecorator *decoratedImageDataLoader = [[DispatchToMainQueueDecorator alloc] initWithDecoratee:imageDataLoader];
+    ImageDataLoaderDispatchToMainDecorator *decoratedImageDataLoader = [[ImageDataLoaderDispatchToMainDecorator alloc]
+                                                                        initWithDecoratee:imageDataLoader];
     
     photosViewModel.didLoad = ^(NSArray<Photo *> * _Nullable photos) {
         NSMutableArray<PhotoCellController *> *cellControllers = [NSMutableArray<PhotoCellController *> array];

@@ -14,6 +14,7 @@
 		BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7F42C89C85B00B4559A /* URLSessionHTTPClientTask.m */; };
 		BE15F7F82C89CD3500B4559A /* RemoteImageDataLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */; };
 		BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7FA2C89DED600B4559A /* PhotoImageDataViewModel.m */; };
+		BE70EA7E2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */; };
 		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
 		BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379A72C8867B600B785E3 /* AppDelegate.m */; };
@@ -26,7 +27,7 @@
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
 		BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */; };
-		BE99AEC42C8B74F3005A6201 /* DispatchToMainQueueDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */; };
+		BE99AEC42C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEC32C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteImageDataLoaderTask.m; sourceTree = "<group>"; };
 		BE15F7F92C89DEBB00B4559A /* PhotoImageDataViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoImageDataViewModel.h; sourceTree = "<group>"; };
 		BE15F7FA2C89DED600B4559A /* PhotoImageDataViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoImageDataViewModel.m; sourceTree = "<group>"; };
+		BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosLoaderDispatchToMainDecorator.h; sourceTree = "<group>"; };
+		BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosLoaderDispatchToMainDecorator.m; sourceTree = "<group>"; };
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
 		BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemotePhotosLoader.m; sourceTree = "<group>"; };
 		BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemotePhotosLoader.h; sourceTree = "<group>"; };
@@ -71,8 +74,8 @@
 		BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderTask.h; sourceTree = "<group>"; };
 		BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosViewComposer.h; sourceTree = "<group>"; };
 		BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosViewComposer.m; sourceTree = "<group>"; };
-		BE99AEC22C8B74D6005A6201 /* DispatchToMainQueueDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DispatchToMainQueueDecorator.h; sourceTree = "<group>"; };
-		BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DispatchToMainQueueDecorator.m; sourceTree = "<group>"; };
+		BE99AEC22C8B74D6005A6201 /* ImageDataLoaderDispatchToMainDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderDispatchToMainDecorator.h; sourceTree = "<group>"; };
+		BE99AEC32C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataLoaderDispatchToMainDecorator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +118,10 @@
 				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
 				BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */,
 				BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */,
-				BE99AEC22C8B74D6005A6201 /* DispatchToMainQueueDecorator.h */,
-				BE99AEC32C8B74F3005A6201 /* DispatchToMainQueueDecorator.m */,
+				BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */,
+				BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */,
+				BE99AEC22C8B74D6005A6201 /* ImageDataLoaderDispatchToMainDecorator.h */,
+				BE99AEC32C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -294,6 +299,7 @@
 			files = (
 				BE15F7E92C89AA6900B4559A /* PhotosViewModel.m in Sources */,
 				BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */,
+				BE70EA7E2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m in Sources */,
 				BE15F7EF2C89B85200B4559A /* HTTPClient.m in Sources */,
 				BE15F7F82C89CD3500B4559A /* RemoteImageDataLoaderTask.m in Sources */,
 				BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */,
@@ -307,7 +313,7 @@
 				BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */,
 				BE8379AB2C8867B600B785E3 /* SceneDelegate.m in Sources */,
 				BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */,
-				BE99AEC42C8B74F3005A6201 /* DispatchToMainQueueDecorator.m in Sources */,
+				BE99AEC42C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m in Sources */,
 				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
 				BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */,
 			);
