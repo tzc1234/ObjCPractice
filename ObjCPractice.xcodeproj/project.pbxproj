@@ -112,10 +112,18 @@
 		BE15F7F12C89BD3B00B4559A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				BE70EA7F2C8C717000FE035E /* Composition */,
 				BE8379A62C8867B600B785E3 /* AppDelegate.h */,
 				BE8379A72C8867B600B785E3 /* AppDelegate.m */,
 				BE8379A92C8867B600B785E3 /* SceneDelegate.h */,
 				BE8379AA2C8867B600B785E3 /* SceneDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BE70EA7F2C8C717000FE035E /* Composition */ = {
+			isa = PBXGroup;
+			children = (
 				BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */,
 				BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */,
 				BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */,
@@ -123,7 +131,7 @@
 				BE99AEC22C8B74D6005A6201 /* ImageDataLoaderDispatchToMainDecorator.h */,
 				BE99AEC32C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m */,
 			);
-			path = Main;
+			path = Composition;
 			sourceTree = "<group>";
 		};
 		BE7AF7F02C88B02400DA8BF3 /* Networking */ = {
