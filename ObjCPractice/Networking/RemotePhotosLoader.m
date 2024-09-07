@@ -6,7 +6,6 @@
 //
 
 #import "RemotePhotosLoader.h"
-#import "Photo.h"
 
 NSString *const RemotePhotosLoaderDomain = @"ObjCPractice.RemotePhotosLoader";
 NSInteger const RemotePhotosLoaderConnectivityErrorErrorCode = 41;

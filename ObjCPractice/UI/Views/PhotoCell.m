@@ -6,7 +6,6 @@
 //
 
 #import "PhotoCell.h"
-#import "ShimmeringView.h"
 
 @interface PhotoCell ()
 

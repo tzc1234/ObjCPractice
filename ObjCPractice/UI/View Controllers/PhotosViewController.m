@@ -6,9 +6,6 @@
 //
 
 #import "PhotosViewController.h"
-#import "PhotoCell.h"
-#import "Photo.h"
-#import "PhotoCellController.h"
 
 @interface PhotosViewController ()
 

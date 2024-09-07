@@ -6,7 +6,6 @@
 //
 
 #import "PhotoImageDataViewModel.h"
-#import "ImageDataLoader.h"
 
 @interface PhotoImageDataViewModel ()
 
