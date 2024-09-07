@@ -76,10 +76,20 @@
         }
     };
     
-// TODO: Error Handling
-//    self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
-//        NSLog(@"error: %@", errorMessage);
-//    };
+    viewModel.onError = ^(NSString * _Nullable errorMessage) {
+        if (errorMessage) {
+            [weakSelf showErrorAlert:errorMessage];
+        }
+    };
+}
+
+- (void)showErrorAlert:(nullable NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Oops!"
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
