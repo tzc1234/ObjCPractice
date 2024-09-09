@@ -26,23 +26,30 @@
 }
 
 - (void)loadPhotos {
-    if (onLoad)
+    if (onLoad) {
         onLoad(YES);
+    }
+    
+    __weak PhotosViewModel *weakSelf = self;
     
     [loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
         if (error) {
-            if (self->onError)
-                self.onError(@"Error occurred, please try again.");
+            if (weakSelf.onError) {
+                weakSelf.onError(@"Error occurred, please try again.");
+            }
         } else {
-            if (self->didLoad)
-                self.didLoad(photos);
+            if (weakSelf.didLoad) {
+                weakSelf.didLoad(photos);
+            }
             
-            if (self->onError)
-                self.onError(nil);
+            if (weakSelf.onError) {
+                weakSelf.onError(nil);
+            }
         }
         
-        if (self->onLoad)
-            self.onLoad(NO);
+        if (weakSelf.onLoad) {
+            weakSelf.onLoad(NO);
+        }
     }];
 }
 
