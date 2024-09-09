@@ -6,10 +6,44 @@
 //
 
 #import "RemoteImageDataLoader.h"
-#import "RemoteImageDataLoaderTask.h"
 
 NSString *const RemoteImageDataLoaderDomain = @"ObjCPractice.RemoteImageDataLoader";
 NSInteger const RemoteImageDataLoaderInvalidDataErrorCode = 41;
+
+// MARK: - RemoteImageDataLoaderTask
+
+@interface RemoteImageDataLoaderTask : NSObject <ImageDataLoaderTask>
+
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithTask:(nonnull id<HTTPClientTask>)task;
+
+@end
+
+@interface RemoteImageDataLoaderTask ()
+
+@property (nonnull, nonatomic, strong) id<HTTPClientTask> task;
+
+@end
+
+@implementation RemoteImageDataLoaderTask
+
+@synthesize task;
+
+- (nullable instancetype)initWithTask:(nonnull id<HTTPClientTask>)task {
+    self = [super init];
+    if (self) {
+        self.task = task;
+    }
+    return self;
+}
+
+- (void)cancel {
+    [task cancel];
+}
+
+@end
+
+// MARK: - RemoteImageDataLoader
 
 @interface RemoteImageDataLoader ()
 

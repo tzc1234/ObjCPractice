@@ -12,7 +12,6 @@
 		BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */; };
 		BE15F7EF2C89B85200B4559A /* HTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7EE2C89B85200B4559A /* HTTPClient.m */; };
 		BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7F42C89C85B00B4559A /* URLSessionHTTPClientTask.m */; };
-		BE15F7F82C89CD3500B4559A /* RemoteImageDataLoaderTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */; };
 		BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7FA2C89DED600B4559A /* PhotoImageDataViewModel.m */; };
 		BE70EA7E2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */; };
 		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
@@ -46,8 +45,6 @@
 		BE15F7EE2C89B85200B4559A /* HTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPClient.m; sourceTree = "<group>"; };
 		BE15F7F32C89C80300B4559A /* URLSessionHTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLSessionHTTPClientTask.h; sourceTree = "<group>"; };
 		BE15F7F42C89C85B00B4559A /* URLSessionHTTPClientTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLSessionHTTPClientTask.m; sourceTree = "<group>"; };
-		BE15F7F62C89CC6A00B4559A /* RemoteImageDataLoaderTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteImageDataLoaderTask.h; sourceTree = "<group>"; };
-		BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteImageDataLoaderTask.m; sourceTree = "<group>"; };
 		BE15F7F92C89DEBB00B4559A /* PhotoImageDataViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoImageDataViewModel.h; sourceTree = "<group>"; };
 		BE15F7FA2C89DED600B4559A /* PhotoImageDataViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoImageDataViewModel.m; sourceTree = "<group>"; };
 		BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosLoaderDispatchToMainDecorator.h; sourceTree = "<group>"; };
@@ -160,8 +157,6 @@
 				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
 				BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */,
 				BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */,
-				BE15F7F62C89CC6A00B4559A /* RemoteImageDataLoaderTask.h */,
-				BE15F7F72C89CD3500B4559A /* RemoteImageDataLoaderTask.m */,
 				BE15F7EB2C89B17600B4559A /* RemoteImageDataLoader.h */,
 				BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */,
 			);
@@ -348,7 +343,6 @@
 				BE8EBAD82C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m in Sources */,
 				BE70EA7E2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m in Sources */,
 				BE15F7EF2C89B85200B4559A /* HTTPClient.m in Sources */,
-				BE15F7F82C89CD3500B4559A /* RemoteImageDataLoaderTask.m in Sources */,
 				BE15F7ED2C89B25200B4559A /* RemoteImageDataLoader.m in Sources */,
 				BE8EBAD52C8F073400B51002 /* ImageDataLoaderCacheDecorator.m in Sources */,
 				BE8379AE2C8867B600B785E3 /* PhotosViewController.m in Sources */,
