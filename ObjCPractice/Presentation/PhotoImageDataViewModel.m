@@ -29,16 +29,21 @@
 }
 
 - (void)loadImageData {
-    if (onLoadImageData)
+    if (onLoadImageData) {
         onLoadImageData(YES);
+    }
+    
+    __weak PhotoImageDataViewModel *weakSelf = self;
     
     self.task = [loader loadImageDataForURL:[self photoURL] 
                                  completion:^(NSData * _Nullable data, NSError * _Nullable error) {
-        if (self->didLoadImageData)
-            self.didLoadImageData(data);
+        if (weakSelf.didLoadImageData) {
+            weakSelf.didLoadImageData(data);
+        }
         
-        if (self->onLoadImageData)
-            self.onLoadImageData(NO);
+        if (weakSelf.onLoadImageData) {
+            weakSelf.onLoadImageData(NO);
+        }
     }];
 }
 
