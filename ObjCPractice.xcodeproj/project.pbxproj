@@ -24,6 +24,8 @@
 		BE8379B62C8867B700B785E3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BE8379B52C8867B700B785E3 /* Base */; };
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
 		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
+		BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */; };
+		BE8EBAD22C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */; };
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
 		BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */; };
@@ -66,6 +68,11 @@
 		BE8379B82C8867B700B785E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BE8379C22C886FB800B785E3 /* PhotoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		BE8379C32C886FEB00B785E3 /* PhotoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataStore.h; sourceTree = "<group>"; };
+		BE8EBACD2C8EEE3500B51002 /* ImageDataCacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataCacher.h; sourceTree = "<group>"; };
+		BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataCacher.m; sourceTree = "<group>"; };
+		BE8EBAD02C8EF49B00B51002 /* ImageDataCacherDataLoadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataCacherDataLoadTask.h; sourceTree = "<group>"; };
+		BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataCacherDataLoadTask.m; sourceTree = "<group>"; };
 		BE99AEB52C8AEDB9005A6201 /* PhotoCellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCellController.h; sourceTree = "<group>"; };
 		BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCellController.m; sourceTree = "<group>"; };
 		BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClientTask.h; sourceTree = "<group>"; };
@@ -187,6 +194,7 @@
 				BE15F7F12C89BD3B00B4559A /* Main */,
 				BE15F7F02C89BB1D00B4559A /* Model */,
 				BE7AF7F02C88B02400DA8BF3 /* Networking */,
+				BE8EBACB2C8EEB0000B51002 /* Cache */,
 				BE15F7E62C89A77300B4559A /* Presentation */,
 				BE8379C02C886F8500B785E3 /* UI */,
 				BE8379B22C8867B700B785E3 /* Assets.xcassets */,
@@ -225,6 +233,18 @@
 				BE8379C32C886FEB00B785E3 /* PhotoCell.m */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BE8EBACB2C8EEB0000B51002 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */,
+				BE8EBACD2C8EEE3500B51002 /* ImageDataCacher.h */,
+				BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */,
+				BE8EBAD02C8EF49B00B51002 /* ImageDataCacherDataLoadTask.h */,
+				BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		BE99AEBC2C8B68AF005A6201 /* Helpers */ = {
@@ -315,7 +335,9 @@
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
+				BE8EBAD22C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m in Sources */,
 				BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */,
+				BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
 				BE8379B92C8867B700B785E3 /* main.m in Sources */,
 				BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */,

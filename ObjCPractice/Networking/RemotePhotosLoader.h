@@ -10,7 +10,7 @@
 #import "PhotosLoader.h"
 
 extern NSString * _Nonnull const RemotePhotosLoaderDomain;
-extern NSInteger const RemotePhotosLoaderConnectivityErrorErrorCode;
+extern NSInteger const RemotePhotosLoaderConnectivityErrorCode;
 extern NSInteger const RemotePhotosLoaderInvalidDataErrorCode;
 
 @interface RemotePhotosLoader : NSObject <PhotosLoader>

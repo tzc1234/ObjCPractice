@@ -8,7 +8,7 @@
 #import "RemotePhotosLoader.h"
 
 NSString *const RemotePhotosLoaderDomain = @"ObjCPractice.RemotePhotosLoader";
-NSInteger const RemotePhotosLoaderConnectivityErrorErrorCode = 41;
+NSInteger const RemotePhotosLoaderConnectivityErrorCode = 41;
 NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
 
 @interface RemotePhotosLoader ()
@@ -92,7 +92,7 @@ NSInteger const RemotePhotosLoaderInvalidDataErrorCode = 42;
 
 - (NSError *)connectivityError {
     return [[NSError alloc] initWithDomain:RemotePhotosLoaderDomain 
-                                      code:RemotePhotosLoaderConnectivityErrorErrorCode
+                                      code:RemotePhotosLoaderConnectivityErrorCode
                                   userInfo:nil];
 }
 
