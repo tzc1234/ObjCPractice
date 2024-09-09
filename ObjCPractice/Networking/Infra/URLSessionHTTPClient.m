@@ -6,7 +6,41 @@
 //
 
 #import "URLSessionHTTPClient.h"
-#import "URLSessionHTTPClientTask.h"
+
+// MARK: - URLSessionHTTPClientTask
+
+@interface URLSessionHTTPClientTask : NSObject <HTTPClientTask>
+
+- (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
+- (nullable instancetype)initWithTask:(nonnull NSURLSessionTask *)task;
+
+@end
+
+@interface URLSessionHTTPClientTask ()
+
+@property (nonnull, nonatomic, strong) NSURLSessionTask *task;
+
+@end
+
+@implementation URLSessionHTTPClientTask
+
+@synthesize task;
+
+- (nullable instancetype)initWithTask:(nonnull NSURLSessionTask *)task {
+    self = [super init];
+    if (self) {
+        self.task = task;
+    }
+    return self;
+}
+
+- (void)cancel {
+    [self.task cancel];
+}
+
+@end
+
+// MARK: - URLSessionHTTPClient
 
 NSString * _Nonnull const URLSessionHTTPClientDomain = @"ObjCPractice.URLSessionHTTPClient";
 NSInteger const UnexpectedRepresentationErrorCode = 40;
