@@ -6,10 +6,39 @@
 //
 
 #import "ImageDataCacher.h"
-#import "ImageDataCacherDataLoadTask.h"
 
 NSString *const ImageDataCacherDomain = @"ObjCPractice.ImageDataCacher";
 NSInteger const ImageDataCacherDataNotFoundErrorCode = 44;
+
+// MARK: - CacherDataLoadTask
+
+@interface CacherDataLoadTask : NSObject <ImageDataLoaderTask>
+
+@property (nullable, nonatomic, strong) ImageDataLoaderCompletion completion;
+
+- (nullable instancetype)initWith:(nonnull ImageDataLoaderCompletion)completion;
+
+@end
+
+@implementation CacherDataLoadTask
+
+@synthesize completion;
+
+- (nullable instancetype)initWith:(nonnull ImageDataLoaderCompletion)completion {
+    self = [super init];
+    if (self) {
+        self.completion = completion;
+    }
+    return self;
+}
+
+- (void)cancel {
+    completion = nil;
+}
+
+@end
+
+// MARK: - ImageDataCacher
 
 @interface ImageDataCacher ()
 
@@ -37,7 +66,7 @@ NSInteger const ImageDataCacherDataNotFoundErrorCode = 44;
 
 - (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
                                              completion:(nonnull ImageDataLoaderCompletion)completion {
-    ImageDataCacherDataLoadTask *task = [[ImageDataCacherDataLoadTask alloc] initWith:completion];
+    CacherDataLoadTask *task = [[CacherDataLoadTask alloc] initWith:completion];
     [store retrieveDataFor:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error || !data) {
             return task.completion(nil, [self dataNotFoundError]);

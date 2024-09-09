@@ -8,6 +8,7 @@
 #import "ImageDataLoaderWithFallbackComposite.h"
 
 // MARK: - TaskWrapper
+
 @interface TaskWrapper : NSObject <ImageDataLoaderTask>
 
 @property (nullable, nonatomic, strong) id<ImageDataLoaderTask> task;
@@ -23,6 +24,7 @@
 @end
 
 // MARK: - ImageDataLoaderWithFallbackComposite
+
 @interface ImageDataLoaderWithFallbackComposite ()
 
 @property (nonnull, nonatomic, strong) id<ImageDataLoader> primary;

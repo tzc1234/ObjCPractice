@@ -25,7 +25,6 @@
 		BE8379B92C8867B700B785E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379B82C8867B700B785E3 /* main.m */; };
 		BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8379C32C886FEB00B785E3 /* PhotoCell.m */; };
 		BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */; };
-		BE8EBAD22C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */; };
 		BE8EBAD52C8F073400B51002 /* ImageDataLoaderCacheDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD42C8F073400B51002 /* ImageDataLoaderCacheDecorator.m */; };
 		BE8EBAD82C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD72C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m */; };
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
@@ -73,8 +72,6 @@
 		BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataStore.h; sourceTree = "<group>"; };
 		BE8EBACD2C8EEE3500B51002 /* ImageDataCacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataCacher.h; sourceTree = "<group>"; };
 		BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataCacher.m; sourceTree = "<group>"; };
-		BE8EBAD02C8EF49B00B51002 /* ImageDataCacherDataLoadTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataCacherDataLoadTask.h; sourceTree = "<group>"; };
-		BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataCacherDataLoadTask.m; sourceTree = "<group>"; };
 		BE8EBAD32C8F05D500B51002 /* ImageDataLoaderCacheDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderCacheDecorator.h; sourceTree = "<group>"; };
 		BE8EBAD42C8F073400B51002 /* ImageDataLoaderCacheDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataLoaderCacheDecorator.m; sourceTree = "<group>"; };
 		BE8EBAD62C8F0B4C00B51002 /* ImageDataLoaderWithFallbackComposite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderWithFallbackComposite.h; sourceTree = "<group>"; };
@@ -251,8 +248,6 @@
 				BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */,
 				BE8EBACD2C8EEE3500B51002 /* ImageDataCacher.h */,
 				BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */,
-				BE8EBAD02C8EF49B00B51002 /* ImageDataCacherDataLoadTask.h */,
-				BE8EBAD12C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m */,
 			);
 			path = Cache;
 			sourceTree = "<group>";
@@ -347,7 +342,6 @@
 				BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */,
 				BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
-				BE8EBAD22C8EF55C00B51002 /* ImageDataCacherDataLoadTask.m in Sources */,
 				BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */,
 				BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
