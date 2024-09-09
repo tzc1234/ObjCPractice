@@ -27,6 +27,7 @@
 		BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */; };
 		BE8EBAD52C8F073400B51002 /* ImageDataLoaderCacheDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD42C8F073400B51002 /* ImageDataLoaderCacheDecorator.m */; };
 		BE8EBAD82C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBAD72C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m */; };
+		BE8EBADC2C8F371500B51002 /* NSCacheImageDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BE8EBADB2C8F371500B51002 /* NSCacheImageDataStore.m */; };
 		BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */; };
 		BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEB92C8B4E6F005A6201 /* ShimmeringView.m */; };
 		BE99AEC02C8B6BF2005A6201 /* PhotosViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */; };
@@ -76,6 +77,8 @@
 		BE8EBAD42C8F073400B51002 /* ImageDataLoaderCacheDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataLoaderCacheDecorator.m; sourceTree = "<group>"; };
 		BE8EBAD62C8F0B4C00B51002 /* ImageDataLoaderWithFallbackComposite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDataLoaderWithFallbackComposite.h; sourceTree = "<group>"; };
 		BE8EBAD72C8F0C2800B51002 /* ImageDataLoaderWithFallbackComposite.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDataLoaderWithFallbackComposite.m; sourceTree = "<group>"; };
+		BE8EBADA2C8F36CD00B51002 /* NSCacheImageDataStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCacheImageDataStore.h; sourceTree = "<group>"; };
+		BE8EBADB2C8F371500B51002 /* NSCacheImageDataStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCacheImageDataStore.m; sourceTree = "<group>"; };
 		BE99AEB52C8AEDB9005A6201 /* PhotoCellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoCellController.h; sourceTree = "<group>"; };
 		BE99AEB62C8AEDD4005A6201 /* PhotoCellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoCellController.m; sourceTree = "<group>"; };
 		BE99AEB82C8B3D44005A6201 /* HTTPClientTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClientTask.h; sourceTree = "<group>"; };
@@ -245,11 +248,21 @@
 		BE8EBACB2C8EEB0000B51002 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */,
+				BE8EBAD92C8F36A900B51002 /* Infra */,
 				BE8EBACD2C8EEE3500B51002 /* ImageDataCacher.h */,
 				BE8EBACE2C8EEFBB00B51002 /* ImageDataCacher.m */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		BE8EBAD92C8F36A900B51002 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				BE8EBACC2C8EEBBC00B51002 /* ImageDataStore.h */,
+				BE8EBADA2C8F36CD00B51002 /* NSCacheImageDataStore.h */,
+				BE8EBADB2C8F371500B51002 /* NSCacheImageDataStore.m */,
+			);
+			path = Infra;
 			sourceTree = "<group>";
 		};
 		BE99AEBC2C8B68AF005A6201 /* Helpers */ = {
@@ -351,6 +364,7 @@
 				BE15F7F52C89C85B00B4559A /* URLSessionHTTPClientTask.m in Sources */,
 				BE99AEC42C8B74F3005A6201 /* ImageDataLoaderDispatchToMainDecorator.m in Sources */,
 				BE0A68852C88EE3C007B9DBF /* URLSessionHTTPClient.m in Sources */,
+				BE8EBADC2C8F371500B51002 /* NSCacheImageDataStore.m in Sources */,
 				BE99AEB72C8AEDD4005A6201 /* PhotoCellController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
