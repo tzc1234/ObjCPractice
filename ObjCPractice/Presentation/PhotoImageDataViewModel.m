@@ -32,7 +32,8 @@
     if (onLoadImageData)
         onLoadImageData(YES);
     
-    self.task = [loader loadImageDataForURL:[self photoURL] completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    self.task = [loader loadImageDataForURL:[self photoURL] 
+                                 completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (self->didLoadImageData)
             self.didLoadImageData(data);
         
