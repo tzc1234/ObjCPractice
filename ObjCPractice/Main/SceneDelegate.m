@@ -15,6 +15,12 @@
 #import "ImageDataLoaderCacheDecorator.h"
 #import "ImageDataLoaderWithFallbackComposite.h"
 
+@interface SceneDelegate ()
+
+@property (strong, nonatomic) id<HTTPClient> httpClient;
+
+@end
+
 @implementation SceneDelegate
 
 @synthesize window;
@@ -28,24 +34,34 @@
     window = [[UIWindow alloc] initWithWindowScene:windowScene];
     
     NSURL *url = [[NSURL alloc] initWithString:@"https://picsum.photos/v2/list"];
-    URLSessionHTTPClient *client = [[URLSessionHTTPClient alloc] initWithSession:NSURLSession.sharedSession];
-    RemotePhotosLoader *loader = [[RemotePhotosLoader alloc] initWithURL:url client:client];
-    
-    RemoteImageDataLoader *imageDataLoader = [[RemoteImageDataLoader alloc] initWithClient:client];
-    NSCacheImageDataStore *imageDataStore = [[NSCacheImageDataStore alloc] init];
-    ImageDataCacher *imageCacher = [[ImageDataCacher alloc] initWith:imageDataStore];
-    
-    ImageDataLoaderCacheDecorator *imageDataLoaderWithCache = [[ImageDataLoaderCacheDecorator alloc]
-                                                               initWithLoader:imageDataLoader
-                                                               andCacher:imageCacher];
-    ImageDataLoaderWithFallbackComposite *imageDataLoaderWithFallback = [[ImageDataLoaderWithFallbackComposite alloc]
-                                                                         initWithPrimary:imageCacher
-                                                                         andFallback:imageDataLoaderWithCache];
+    RemotePhotosLoader *loader = [[RemotePhotosLoader alloc] initWithURL:url client:self.httpClient];
     
     window.rootViewController = [[UINavigationController alloc] initWithRootViewController:
                                  [PhotosViewComposer composeWithPhotoLoader:loader
-                                                            imageDataLoader:imageDataLoaderWithFallback]];
+                                                            imageDataLoader:[self imageDataLoader]]];
     [window makeKeyAndVisible];
+}
+
+- (id<HTTPClient>)httpClient {
+    if (!_httpClient) {
+        _httpClient = [[URLSessionHTTPClient alloc] initWithSession:NSURLSession.sharedSession];
+    }
+    
+    return _httpClient;
+}
+
+- (id<ImageDataLoader>)imageDataLoader {
+    RemoteImageDataLoader *loader = [[RemoteImageDataLoader alloc] initWithClient:self.httpClient];
+    NSCacheImageDataStore *store = [[NSCacheImageDataStore alloc] init];
+    ImageDataCacher *cacher = [[ImageDataCacher alloc] initWith:store];
+    
+    ImageDataLoaderCacheDecorator *loaderWithCache = [[ImageDataLoaderCacheDecorator alloc]
+                                                      initWithLoader:loader
+                                                      andCacher:cacher];
+    ImageDataLoaderWithFallbackComposite *loaderWithFallback = [[ImageDataLoaderWithFallbackComposite alloc]
+                                                                initWithPrimary:cacher
+                                                                andFallback:loaderWithCache];
+    return loaderWithFallback;
 }
 
 @end
