@@ -15,7 +15,8 @@
 + (void)registerCellFor:(nonnull UITableView *)tableView;
 
 - (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
-- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andAuthor:(nonnull NSString *)author;
+- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel 
+                                 andAuthor:(nonnull NSString *)author;
 - (nullable UITableViewCell *)cellFor:(nonnull UITableView *)tableView;
 - (void)configure:(nonnull UITableViewCell *)cell;
 - (void)loadImageData;

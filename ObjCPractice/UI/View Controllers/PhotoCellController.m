@@ -23,7 +23,8 @@
     [tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCell.cellID];
 }
 
-- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel andAuthor:(nonnull NSString *)author {
+- (nullable instancetype)initWithViewModel:(nonnull PhotoImageDataViewModel *)viewModel 
+                                 andAuthor:(nonnull NSString *)author {
     self = [super init];
     self.viewModel = viewModel;
     _author = author;
@@ -76,7 +77,12 @@
 }
 
 - (void)cancelImageDataLoad {
+    [self releaseCellForReuse];
     [viewModel cancelImageDataLoad];
+}
+
+- (void)releaseCellForReuse {
+    self.cell = nil;
 }
 
 @end
