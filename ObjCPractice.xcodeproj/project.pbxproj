@@ -107,13 +107,16 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
-		BE15F7F02C89BB1D00B4559A /* Model */ = {
+		BE15F7F02C89BB1D00B4559A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				BE7AF7F62C88B7F400DA8BF3 /* Photo.h */,
 				BE7AF7F72C88B81C00DA8BF3 /* Photo.m */,
+				BE15F7E52C8999E600B4559A /* PhotosLoader.h */,
+				BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */,
+				BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */,
 			);
-			path = Model;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		BE15F7F12C89BD3B00B4559A /* Main */ = {
@@ -149,11 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				BE7AF7F22C88B08A00DA8BF3 /* Infra */,
-				BE15F7E52C8999E600B4559A /* PhotosLoader.h */,
 				BE7AF7F52C88B50200DA8BF3 /* RemotePhotosLoader.h */,
 				BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */,
-				BE15F7EA2C89B0DC00B4559A /* ImageDataLoader.h */,
-				BE99AEBD2C8B6AA8005A6201 /* ImageDataLoaderTask.h */,
 				BE15F7EB2C89B17600B4559A /* RemoteImageDataLoader.h */,
 				BE15F7EC2C89B25200B4559A /* RemoteImageDataLoader.m */,
 			);
@@ -192,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				BE15F7F12C89BD3B00B4559A /* Main */,
-				BE15F7F02C89BB1D00B4559A /* Model */,
+				BE15F7F02C89BB1D00B4559A /* Domain */,
 				BE7AF7F02C88B02400DA8BF3 /* Networking */,
 				BE8EBACB2C8EEB0000B51002 /* Cache */,
 				BE15F7E62C89A77300B4559A /* Presentation */,
