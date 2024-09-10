@@ -16,16 +16,53 @@
 @property (strong, nonatomic) ShimmeringView *imageContainerView;
 @property (strong, nonatomic) UIImageView *imageView;
 @property (strong, nonatomic) UIButton *reloadButton;
+@property (strong, nonatomic, nonnull) PhotoDetailViewModel *viewModel;
+@property (nonatomic) BOOL isInit;
 
 @end
 
 @implementation PhotoDetailViewController
 
-@synthesize stackView, authorLabel, webURLButton, imageContainerView, imageView, reloadButton;
+@synthesize stackView, authorLabel, webURLButton, imageContainerView, imageView, reloadButton, viewModel, isInit;
+
+- (nullable instancetype)initWithViewModel:(nonnull PhotoDetailViewModel *)viewModel {
+    self = [super init];
+    if (self) {
+        self.viewModel = viewModel;
+        self.isInit = YES;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureLayout];
+    [self setupBindings];
+}
+
+- (void)viewIsAppearing:(BOOL)animated {
+    [super viewIsAppearing:animated];
+    
+    if (isInit) {
+        self.isInit = NO;
+        [self loadPhoto];
+    }
+}
+
+- (void)setupBindings {
+    __weak PhotoDetailViewController *weakSelf = self;
+    
+    viewModel.onLoad = ^(BOOL isLoading) {
+        weakSelf.imageContainerView.isShimmering = isLoading;
+    };
+    
+    viewModel.didLoad = ^(NSData * _Nullable data) {
+        weakSelf.imageView.image = [[UIImage alloc] initWithData:data];
+    };
+    
+    viewModel.shouldReload = ^(BOOL shouldReload) {
+        [weakSelf.reloadButton setHidden:!shouldReload];
+    };
 }
 
 - (void)configureLayout {
@@ -48,11 +85,12 @@
     [stackView addArrangedSubview:authorLabel];
     [stackView addArrangedSubview:webURLButton];
     
+    CGFloat ratio = (CGFloat) viewModel.photoWidth / (CGFloat) viewModel.photoHeight;
     [NSLayoutConstraint activateConstraints:@[
         [imageContainerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
         [imageContainerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
         [imageContainerView.centerYAnchor constraintLessThanOrEqualToAnchor:self.view.centerYAnchor],
-        [imageContainerView.heightAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:1],
+        [imageContainerView.heightAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:ratio],
         [imageContainerView.bottomAnchor constraintLessThanOrEqualToAnchor:stackView.topAnchor constant:-8],
         
         [imageView.leadingAnchor constraintEqualToAnchor:imageContainerView.leadingAnchor],
@@ -80,12 +118,18 @@
 - (void)setupAuthorLabel {
     authorLabel = [[UILabel alloc] init];
     authorLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    authorLabel.text = viewModel.author;
 }
 
 - (void)setupWebURLButton {
     webURLButton = [[UIButton alloc] init];
     webURLButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
     [webURLButton addTarget:self action:@selector(openWeb) forControlEvents: UIControlEventTouchUpInside];
+    
+    NSString *url = viewModel.webURL.absoluteString;
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:url];
+    [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
+    [webURLButton setAttributedTitle:attributedString forState:UIControlStateNormal];
 }
 
 - (void)setupImageContainerView {
@@ -106,17 +150,17 @@
     UIImage *image = [UIImage systemImageNamed:@"arrow.clockwise" withConfiguration:configuration];
     [reloadButton setImage:image forState:UIControlStateNormal];
     reloadButton.tintColor = UIColor.whiteColor;
-    [reloadButton addTarget:self action:@selector(loadImage) forControlEvents:UIControlEventTouchUpInside];
+    [reloadButton addTarget:self action:@selector(loadPhoto) forControlEvents:UIControlEventTouchUpInside];
     [reloadButton setHidden:YES];
     reloadButton.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)openWeb {
-    
+    [UIApplication.sharedApplication openURL:viewModel.webURL options:@{} completionHandler:nil];
 }
 
-- (void)loadImage {
-    
+- (void)loadPhoto {
+    [viewModel loadPhotoData];
 }
 
 @end
