@@ -6,28 +6,23 @@
 //
 
 #import "PhotosViewComposer.h"
-#import "ImageDataLoaderDispatchToMainDecorator.h"
-#import "PhotosLoaderDispatchToMainDecorator.h"
 
 @implementation PhotosViewComposer
 
 + (PhotosViewController *)composeWithPhotoLoader:(id<PhotosLoader>)photoLoader 
-                                 imageDataLoader:(id<ImageDataLoader>)imageDataLoader {
-    PhotosLoaderDispatchToMainDecorator *decoratedPhotoLoader = [[PhotosLoaderDispatchToMainDecorator alloc] 
-                                                                 initWithDecoratee:photoLoader];
-    PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:decoratedPhotoLoader];
+                                 imageDataLoader:(id<ImageDataLoader>)imageDataLoader
+                                       selection:(nullable void(^)(Photo * _Nullable photo))selection {
+    PhotosViewModel *photosViewModel = [[PhotosViewModel alloc] initWithLoader:photoLoader];
     PhotosViewController *photosViewController = [[PhotosViewController alloc] initWithViewModel:photosViewModel];
     [PhotoCellController registerCellFor:photosViewController.tableView];
-    
-    ImageDataLoaderDispatchToMainDecorator *decoratedImageDataLoader = [[ImageDataLoaderDispatchToMainDecorator alloc]
-                                                                        initWithDecoratee:imageDataLoader];
     
     photosViewModel.didLoad = ^(NSArray<Photo *> * _Nullable photos) {
         NSMutableArray<PhotoCellController *> *cellControllers = [NSMutableArray<PhotoCellController *> array];
         
         for (Photo *photo in photos) {
-            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:decoratedImageDataLoader andPhoto:photo];
+            PhotoImageDataViewModel *model = [[PhotoImageDataViewModel alloc] initWithLoader:imageDataLoader andPhoto:photo];
             PhotoCellController *controller = [[PhotoCellController alloc] initWithViewModel:model andAuthor:photo.author];
+            controller.selection = ^{ selection(photo); };
             [cellControllers addObject:controller];
         }
         

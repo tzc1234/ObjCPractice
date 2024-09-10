@@ -13,7 +13,8 @@
 @interface PhotosViewComposer : NSObject
 
 + (nullable PhotosViewController *)composeWithPhotoLoader:(nonnull id<PhotosLoader>)photoLoader
-                                          imageDataLoader:(nonnull id<ImageDataLoader>)imageDataLoader;
+                                          imageDataLoader:(nonnull id<ImageDataLoader>)imageDataLoader
+                                                 selection:(nullable void(^)(Photo * _Nullable photo))selection;
 
 - (nullable instancetype)init __attribute__((unavailable("This method is unavailable.")));
 

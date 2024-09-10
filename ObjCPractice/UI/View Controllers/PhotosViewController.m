@@ -105,6 +105,10 @@
     [[self cellControllerForRowAtIndexPath:indexPath] cancelImageDataLoad];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self cellControllerForRowAtIndexPath:indexPath].selection();
+}
+
 - (PhotoCellController *)cellControllerForRowAtIndexPath:(NSIndexPath *)indexPath {
     return photoCellController[indexPath.row];
 }

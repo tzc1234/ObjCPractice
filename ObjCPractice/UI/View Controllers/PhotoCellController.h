@@ -11,6 +11,7 @@
 @interface PhotoCellController : NSObject
 
 @property (nonnull, readonly) NSString *author;
+@property (nullable, nonatomic, strong) void(^selection)(void);
 
 + (void)registerCellFor:(nonnull UITableView *)tableView;
 
