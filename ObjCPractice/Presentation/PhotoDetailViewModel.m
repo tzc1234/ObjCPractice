@@ -52,20 +52,20 @@
     __weak PhotoDetailViewModel *weakSelf = self;
     self.task = [loader loadImageDataForURL:photo.url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
-            if (weakSelf.didLoad) {
-                weakSelf.didLoad(nil);
-            }
-            
             if (weakSelf.shouldReload) {
                 weakSelf.shouldReload(YES);
             }
-        } else {
-            if (weakSelf.didLoad) {
-                weakSelf.didLoad(data);
-            }
             
+            if (weakSelf.didLoad) {
+                weakSelf.didLoad(nil);
+            }
+        } else {
             if (weakSelf.shouldReload) {
                 weakSelf.shouldReload(NO);
+            }
+            
+            if (weakSelf.didLoad) {
+                weakSelf.didLoad(data);
             }
         }
         

@@ -48,13 +48,14 @@
 
 - (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
                                              completion:(nonnull ImageDataLoaderCompletion)completion {
+    __weak ImageDataLoaderWithFallbackComposite *weakSelf = self;
     TaskWrapper *wrapper = [[TaskWrapper alloc] init];
     wrapper.task = [primary loadImageDataForURL:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
-            wrapper.task = [self->fallback loadImageDataForURL:url completion:completion];
+            wrapper.task = [weakSelf.fallback loadImageDataForURL:url completion:completion];
+        } else {
+            completion(data, error);
         }
-        
-        completion(data, error);
     }];
     return wrapper;
 }

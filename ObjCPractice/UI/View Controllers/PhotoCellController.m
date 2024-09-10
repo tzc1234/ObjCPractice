@@ -17,7 +17,7 @@
 
 @implementation PhotoCellController
 
-@synthesize viewModel, cell;
+@synthesize viewModel, cell, selection;
 
 + (void)registerCellFor:(nonnull UITableView *)tableView {
     [tableView registerClass:[PhotoCell class] forCellReuseIdentifier:PhotoCell.cellID];
