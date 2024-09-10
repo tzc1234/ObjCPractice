@@ -11,7 +11,6 @@
 #import "RemoteImageDataLoader.h"
 #import "PhotosViewComposer.h"
 #import "NSCacheImageDataStore.h"
-#import "ImageDataCacher.h"
 #import "ImageDataLoaderCacheDecorator.h"
 #import "ImageDataLoaderWithFallbackComposite.h"
 #import "PhotoDetailViewComposer.h"
