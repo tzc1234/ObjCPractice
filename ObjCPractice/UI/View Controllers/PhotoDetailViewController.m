@@ -85,7 +85,8 @@
     [stackView addArrangedSubview:authorLabel];
     [stackView addArrangedSubview:webURLButton];
     
-    CGFloat ratio = (CGFloat) viewModel.photoWidth / (CGFloat) viewModel.photoHeight;
+    CGFloat ratio = ((CGFloat)viewModel.photoHeight) / ((CGFloat)MAX(viewModel.photoWidth, 1));
+    
     [NSLayoutConstraint activateConstraints:@[
         [imageContainerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
         [imageContainerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
