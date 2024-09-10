@@ -14,6 +14,7 @@
 		BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE15F7FA2C89DED600B4559A /* PhotoImageDataViewModel.m */; };
 		BE6077822C9053F000BF8F22 /* PhotoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6077812C9053F000BF8F22 /* PhotoDetailViewController.m */; };
 		BE6077852C908C8100BF8F22 /* PhotoDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6077842C908C8100BF8F22 /* PhotoDetailViewModel.m */; };
+		BE6077882C90990500BF8F22 /* PhotoDetailViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6077872C90990500BF8F22 /* PhotoDetailViewComposer.m */; };
 		BE70EA7E2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */; };
 		BE7AF7F42C88B4E900DA8BF3 /* RemotePhotosLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F32C88B4E900DA8BF3 /* RemotePhotosLoader.m */; };
 		BE7AF7F82C88B81C00DA8BF3 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE7AF7F72C88B81C00DA8BF3 /* Photo.m */; };
@@ -50,6 +51,8 @@
 		BE6077812C9053F000BF8F22 /* PhotoDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewController.m; sourceTree = "<group>"; };
 		BE6077832C908C6F00BF8F22 /* PhotoDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewModel.h; sourceTree = "<group>"; };
 		BE6077842C908C8100BF8F22 /* PhotoDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewModel.m; sourceTree = "<group>"; };
+		BE6077862C9098E600BF8F22 /* PhotoDetailViewComposer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoDetailViewComposer.h; sourceTree = "<group>"; };
+		BE6077872C90990500BF8F22 /* PhotoDetailViewComposer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoDetailViewComposer.m; sourceTree = "<group>"; };
 		BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotosLoaderDispatchToMainDecorator.h; sourceTree = "<group>"; };
 		BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotosLoaderDispatchToMainDecorator.m; sourceTree = "<group>"; };
 		BE7AF7F12C88B07B00DA8BF3 /* HTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPClient.h; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 			children = (
 				BE99AEBE2C8B6BD6005A6201 /* PhotosViewComposer.h */,
 				BE99AEBF2C8B6BF2005A6201 /* PhotosViewComposer.m */,
+				BE6077862C9098E600BF8F22 /* PhotoDetailViewComposer.h */,
+				BE6077872C90990500BF8F22 /* PhotoDetailViewComposer.m */,
 				BE70EA7C2C8C329600FE035E /* PhotosLoaderDispatchToMainDecorator.h */,
 				BE70EA7D2C8C32A000FE035E /* PhotosLoaderDispatchToMainDecorator.m */,
 				BE99AEC22C8B74D6005A6201 /* ImageDataLoaderDispatchToMainDecorator.h */,
@@ -355,6 +360,7 @@
 				BE8379C42C886FEB00B785E3 /* PhotoCell.m in Sources */,
 				BE8379A82C8867B600B785E3 /* AppDelegate.m in Sources */,
 				BE99AEBA2C8B4E6F005A6201 /* ShimmeringView.m in Sources */,
+				BE6077882C90990500BF8F22 /* PhotoDetailViewComposer.m in Sources */,
 				BE6077822C9053F000BF8F22 /* PhotoDetailViewController.m in Sources */,
 				BE8EBACF2C8EEFBB00B51002 /* ImageDataCacher.m in Sources */,
 				BE15F7FB2C89DED600B4559A /* PhotoImageDataViewModel.m in Sources */,
