@@ -61,13 +61,13 @@ NSInteger const ImageDataCacherDataNotFoundErrorCode = 44;
 - (void)saveImageData:(nonnull NSData *)data 
                forURL:(nonnull NSURL *)url
            completion:(void(^ _Nonnull)(NSError * _Nullable error))completion {
-    [store insert:data forURL:url completion:completion];
+    [self.store insert:data forURL:url completion:completion];
 }
 
 - (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
                                              completion:(nonnull ImageDataLoaderCompletion)completion {
     CacherDataLoadTask *task = [[CacherDataLoadTask alloc] initWith:completion];
-    [store retrieveDataFor:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    [self.self.store retrieveDataFor:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error || !data) {
             return task.completion(nil, [self dataNotFoundError]);
         }

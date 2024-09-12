@@ -44,93 +44,93 @@
 
 - (void)setupConstraints {
     [self.contentView addSubview:shadowBGView];
-    [shadowBGView addSubview:containerView];
-    [containerView addSubview:placeholderView];
-    [containerView addSubview:photoView];
-    [containerView addSubview:blurView];
-    [containerView addSubview:titleLabel];
+    [self.shadowBGView addSubview:self.containerView];
+    [self.containerView addSubview:self.placeholderView];
+    [self.containerView addSubview:self.photoView];
+    [self.containerView addSubview:self.blurView];
+    [self.containerView addSubview:self.titleLabel];
     
-    NSLayoutConstraint *bgBottomConstraint = [shadowBGView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor 
-                                                                                       constant:-6];
+    NSLayoutConstraint *bgBottomConstraint = [self.shadowBGView.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor
+                                                                                            constant:-6];
     bgBottomConstraint.priority = 999;
     
     [NSLayoutConstraint activateConstraints:@[
-        [shadowBGView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:6],
-        [shadowBGView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:12],
-        [shadowBGView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-12],
+        [self.shadowBGView.topAnchor constraintEqualToAnchor:self.contentView.topAnchor constant:6],
+        [self.shadowBGView.leadingAnchor constraintEqualToAnchor:self.contentView.leadingAnchor constant:12],
+        [self.shadowBGView.trailingAnchor constraintEqualToAnchor:self.contentView.trailingAnchor constant:-12],
         bgBottomConstraint,
-        [shadowBGView.heightAnchor constraintEqualToAnchor:shadowBGView.widthAnchor multiplier:0.56],
+        [self.shadowBGView.heightAnchor constraintEqualToAnchor:self.shadowBGView.widthAnchor multiplier:0.56],
     
-        [containerView.topAnchor constraintEqualToAnchor:shadowBGView.topAnchor],
-        [containerView.leadingAnchor constraintEqualToAnchor:shadowBGView.leadingAnchor],
-        [containerView.trailingAnchor constraintEqualToAnchor:shadowBGView.trailingAnchor],
-        [containerView.bottomAnchor constraintEqualToAnchor:shadowBGView.bottomAnchor],
+        [self.containerView.topAnchor constraintEqualToAnchor:self.shadowBGView.topAnchor],
+        [self.containerView.leadingAnchor constraintEqualToAnchor:self.shadowBGView.leadingAnchor],
+        [self.containerView.trailingAnchor constraintEqualToAnchor:self.shadowBGView.trailingAnchor],
+        [self.containerView.bottomAnchor constraintEqualToAnchor:self.shadowBGView.bottomAnchor],
         
-        [placeholderView.centerXAnchor constraintEqualToAnchor:containerView.centerXAnchor],
-        [placeholderView.centerYAnchor constraintEqualToAnchor:containerView.centerYAnchor],
+        [self.placeholderView.centerXAnchor constraintEqualToAnchor:self.containerView.centerXAnchor],
+        [self.placeholderView.centerYAnchor constraintEqualToAnchor:self.containerView.centerYAnchor],
         
-        [photoView.topAnchor constraintEqualToAnchor:containerView.topAnchor],
-        [photoView.leadingAnchor constraintEqualToAnchor:containerView.leadingAnchor],
-        [photoView.trailingAnchor constraintEqualToAnchor:containerView.trailingAnchor],
-        [photoView.bottomAnchor constraintEqualToAnchor:containerView.bottomAnchor],
+        [self.photoView.topAnchor constraintEqualToAnchor:self.containerView.topAnchor],
+        [self.photoView.leadingAnchor constraintEqualToAnchor:self.containerView.leadingAnchor],
+        [self.photoView.trailingAnchor constraintEqualToAnchor:self.containerView.trailingAnchor],
+        [self.photoView.bottomAnchor constraintEqualToAnchor:self.containerView.bottomAnchor],
         
-        [blurView.topAnchor constraintEqualToAnchor:titleLabel.topAnchor constant:-8],
-        [blurView.leadingAnchor constraintEqualToAnchor:containerView.leadingAnchor],
-        [blurView.trailingAnchor constraintEqualToAnchor:containerView.trailingAnchor],
-        [blurView.bottomAnchor constraintEqualToAnchor:containerView.bottomAnchor],
+        [self.blurView.topAnchor constraintEqualToAnchor:self.titleLabel.topAnchor constant:-8],
+        [self.blurView.leadingAnchor constraintEqualToAnchor:self.containerView.leadingAnchor],
+        [self.blurView.trailingAnchor constraintEqualToAnchor:self.containerView.trailingAnchor],
+        [self.blurView.bottomAnchor constraintEqualToAnchor:self.containerView.bottomAnchor],
         
-        [titleLabel.leadingAnchor constraintEqualToAnchor:containerView.leadingAnchor constant:8],
-        [titleLabel.trailingAnchor constraintEqualToAnchor:containerView.trailingAnchor constant:-8],
-        [titleLabel.bottomAnchor constraintEqualToAnchor:containerView.bottomAnchor constant:-8]
+        [self.titleLabel.leadingAnchor constraintEqualToAnchor:self.containerView.leadingAnchor constant:8],
+        [self.titleLabel.trailingAnchor constraintEqualToAnchor:self.containerView.trailingAnchor constant:-8],
+        [self.titleLabel.bottomAnchor constraintEqualToAnchor:self.containerView.bottomAnchor constant:-8]
     ]];
 }
 
 - (void)setupShadowBGView {
-    shadowBGView = [[UIView alloc] initWithFrame:CGRectZero];
-    shadowBGView.backgroundColor = UIColor.systemBackgroundColor;
-    shadowBGView.layer.cornerRadius = 6;
-    shadowBGView.layer.shadowColor = UIColor.secondaryLabelColor.CGColor;
-    shadowBGView.layer.shadowOpacity = 0.9;
-    shadowBGView.layer.shadowRadius = 2;
-    shadowBGView.layer.shadowOffset = CGSizeMake(0, 3);
-    shadowBGView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.shadowBGView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.shadowBGView.backgroundColor = UIColor.systemBackgroundColor;
+    self.shadowBGView.layer.cornerRadius = 6;
+    self.shadowBGView.layer.shadowColor = UIColor.secondaryLabelColor.CGColor;
+    self.shadowBGView.layer.shadowOpacity = 0.9;
+    self.shadowBGView.layer.shadowRadius = 2;
+    self.shadowBGView.layer.shadowOffset = CGSizeMake(0, 3);
+    self.shadowBGView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupContainerView {
-    containerView = [[ShimmeringView alloc] init];
-    containerView.backgroundColor = UIColor.systemGray4Color;
-    containerView.layer.cornerRadius = 6;
-    containerView.layer.borderWidth = 1;
-    containerView.layer.borderColor = UIColor.tertiaryLabelColor.CGColor;
-    containerView.clipsToBounds = YES;
-    containerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.containerView = [[ShimmeringView alloc] init];
+    self.containerView.backgroundColor = UIColor.systemGray4Color;
+    self.containerView.layer.cornerRadius = 6;
+    self.containerView.layer.borderWidth = 1;
+    self.containerView.layer.borderColor = UIColor.tertiaryLabelColor.CGColor;
+    self.containerView.clipsToBounds = YES;
+    self.containerView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupPhotoView {
-    photoView = [[UIImageView alloc] init];
-    photoView.contentMode = UIViewContentModeScaleAspectFit;
-    photoView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.photoView = [[UIImageView alloc] init];
+    self.photoView.contentMode = UIViewContentModeScaleAspectFit;
+    self.photoView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupPlaceholderView {
     UIImageSymbolConfiguration *configuration = [UIImageSymbolConfiguration configurationWithPointSize:80];
     UIImage *placeholderImage = [UIImage systemImageNamed:@"photo" withConfiguration:configuration];
-    placeholderView = [[UIImageView alloc] initWithImage:placeholderImage];
-    placeholderView.tintColor = UIColor.secondaryLabelColor;
-    placeholderView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.placeholderView = [[UIImageView alloc] initWithImage:placeholderImage];
+    self.placeholderView.tintColor = UIColor.secondaryLabelColor;
+    self.placeholderView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupBlurView {
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleRegular];
-    blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
-    blurView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.blurView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    self.blurView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupTitleLabel {
-    titleLabel = [[UILabel alloc] init];
-    titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
-    titleLabel.numberOfLines = 0;
-    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.titleLabel = [[UILabel alloc] init];
+    self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
+    self.titleLabel.numberOfLines = 0;
+    self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 @end

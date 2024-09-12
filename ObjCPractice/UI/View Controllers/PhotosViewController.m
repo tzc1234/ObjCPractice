@@ -41,8 +41,8 @@
 - (void)viewIsAppearing:(BOOL)animated {
     [super viewIsAppearing:animated];
     
-    if (isInit) {
-        isInit = NO;
+    if (self.isInit) {
+        self.isInit = NO;
         [self reloadPhotos];
     }
 }
@@ -59,13 +59,13 @@
 }
 
 - (void)reloadPhotos {
-    [viewModel loadPhotos];
+    [self.viewModel loadPhotos];
 }
 
 - (void)setupBindings {
     __weak PhotosViewController *weakSelf = self;
     
-    viewModel.onLoad = ^(BOOL isLoading) {
+    self.viewModel.onLoad = ^(BOOL isLoading) {
         if (isLoading) {
             [weakSelf.tableView.refreshControl beginRefreshing];
         } else {
@@ -73,7 +73,7 @@
         }
     };
     
-    viewModel.onError = ^(NSString * _Nullable errorMessage) {
+    self.viewModel.onError = ^(NSString * _Nullable errorMessage) {
         if (errorMessage) {
             [weakSelf showErrorAlert:errorMessage];
         }
@@ -90,7 +90,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return photoCellController.count;
+    return self.photoCellController.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

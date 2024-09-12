@@ -26,13 +26,13 @@
 }
 
 - (void)loadPhotos {
-    if (onLoad) {
-        onLoad(YES);
+    if (self.onLoad) {
+        self.onLoad(YES);
     }
     
     __weak PhotosViewModel *weakSelf = self;
     
-    [loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
+    [self.loader loadWithCompletion:^(NSArray<Photo *> * _Nullable photos, NSError * _Nullable error) {
         if (error) {
             if (weakSelf.onError) {
                 weakSelf.onError(@"Error occurred, please try again.");

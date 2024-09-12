@@ -43,7 +43,7 @@
 - (void)viewIsAppearing:(BOOL)animated {
     [super viewIsAppearing:animated];
     
-    if (isInit) {
+    if (self.isInit) {
         self.isInit = NO;
         [self loadPhoto];
     }
@@ -52,15 +52,15 @@
 - (void)setupBindings {
     __weak PhotoDetailViewController *weakSelf = self;
     
-    viewModel.onLoad = ^(BOOL isLoading) {
+    self.viewModel.onLoad = ^(BOOL isLoading) {
         weakSelf.imageContainerView.isShimmering = isLoading;
     };
     
-    viewModel.didLoad = ^(NSData * _Nullable data) {
+    self.viewModel.didLoad = ^(NSData * _Nullable data) {
         weakSelf.imageView.image = [[UIImage alloc] initWithData:data];
     };
     
-    viewModel.shouldReload = ^(BOOL shouldReload) {
+    self.viewModel.shouldReload = ^(BOOL shouldReload) {
         [weakSelf.reloadButton setHidden:!shouldReload];
     };
 }
@@ -77,91 +77,91 @@
 }
 
 - (void)configureUIConstraints {
-    [self.view addSubview:imageContainerView];
-    [imageContainerView addSubview:imageView];
-    [imageContainerView addSubview:reloadButton];
+    [self.view addSubview:self.imageContainerView];
+    [self.imageContainerView addSubview:self.imageView];
+    [self.imageContainerView addSubview:self.reloadButton];
     
-    [self.view addSubview:stackView];
-    [stackView addArrangedSubview:authorLabel];
-    [stackView addArrangedSubview:webURLButton];
+    [self.view addSubview:self.stackView];
+    [self.stackView addArrangedSubview:self.authorLabel];
+    [self.stackView addArrangedSubview:self.webURLButton];
     
-    CGFloat ratio = ((CGFloat)viewModel.photoHeight) / ((CGFloat)MAX(viewModel.photoWidth, 1));
+    CGFloat ratio = ((CGFloat)self.viewModel.photoHeight) / ((CGFloat)MAX(self.viewModel.photoWidth, 1));
     
     [NSLayoutConstraint activateConstraints:@[
-        [imageContainerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
-        [imageContainerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
-        [imageContainerView.centerYAnchor constraintLessThanOrEqualToAnchor:self.view.centerYAnchor],
-        [imageContainerView.heightAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:ratio],
-        [imageContainerView.bottomAnchor constraintLessThanOrEqualToAnchor:stackView.topAnchor constant:-8],
+        [self.imageContainerView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [self.imageContainerView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+        [self.imageContainerView.centerYAnchor constraintLessThanOrEqualToAnchor:self.view.centerYAnchor],
+        [self.imageContainerView.heightAnchor constraintEqualToAnchor:self.view.widthAnchor multiplier:ratio],
+        [self.imageContainerView.bottomAnchor constraintLessThanOrEqualToAnchor:self.stackView.topAnchor constant:-8],
         
-        [imageView.leadingAnchor constraintEqualToAnchor:imageContainerView.leadingAnchor],
-        [imageView.trailingAnchor constraintEqualToAnchor:imageContainerView.trailingAnchor],
-        [imageView.topAnchor constraintEqualToAnchor:imageContainerView.topAnchor],
-        [imageView.bottomAnchor constraintEqualToAnchor:imageContainerView.bottomAnchor],
+        [self.imageView.leadingAnchor constraintEqualToAnchor:self.imageContainerView.leadingAnchor],
+        [self.imageView.trailingAnchor constraintEqualToAnchor:self.imageContainerView.trailingAnchor],
+        [self.imageView.topAnchor constraintEqualToAnchor:self.imageContainerView.topAnchor],
+        [self.imageView.bottomAnchor constraintEqualToAnchor:self.imageContainerView.bottomAnchor],
         
-        [reloadButton.centerXAnchor constraintEqualToAnchor:imageContainerView.centerXAnchor],
-        [reloadButton.centerYAnchor constraintEqualToAnchor:imageContainerView.centerYAnchor],
+        [self.reloadButton.centerXAnchor constraintEqualToAnchor:self.imageContainerView.centerXAnchor],
+        [self.reloadButton.centerYAnchor constraintEqualToAnchor:self.imageContainerView.centerYAnchor],
         
-        [stackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
-        [stackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
-        [stackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-8]
+        [self.stackView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:8],
+        [self.stackView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:-8],
+        [self.stackView.bottomAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.bottomAnchor constant:-8]
     ]];
 }
 
 - (void)setupStackView {
-    stackView = [[UIStackView alloc] init];
-    stackView.axis = UILayoutConstraintAxisVertical;
-    stackView.alignment = UIStackViewAlignmentLeading;
-    stackView.distribution = UIStackViewDistributionFill;
-    stackView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.stackView = [[UIStackView alloc] init];
+    self.stackView.axis = UILayoutConstraintAxisVertical;
+    self.stackView.alignment = UIStackViewAlignmentLeading;
+    self.stackView.distribution = UIStackViewDistributionFill;
+    self.stackView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupAuthorLabel {
-    authorLabel = [[UILabel alloc] init];
-    authorLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-    authorLabel.text = viewModel.author;
+    self.authorLabel = [[UILabel alloc] init];
+    self.authorLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    self.authorLabel.text = self.viewModel.author;
 }
 
 - (void)setupWebURLButton {
-    webURLButton = [[UIButton alloc] init];
-    webURLButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
-    [webURLButton addTarget:self action:@selector(openWeb) forControlEvents: UIControlEventTouchUpInside];
+    self.webURLButton = [[UIButton alloc] init];
+    self.webURLButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+    [self.webURLButton addTarget:self action:@selector(openWeb) forControlEvents: UIControlEventTouchUpInside];
     
-    NSString *url = viewModel.webURL.absoluteString;
+    NSString *url = self.viewModel.webURL.absoluteString;
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:url];
     [attributedString addAttribute:NSLinkAttributeName value:url range:NSMakeRange(0, url.length)];
-    [webURLButton setAttributedTitle:attributedString forState:UIControlStateNormal];
+    [self.webURLButton setAttributedTitle:attributedString forState:UIControlStateNormal];
 }
 
 - (void)setupImageContainerView {
-    imageContainerView = [[ShimmeringView alloc] init];
-    imageContainerView.backgroundColor = UIColor.systemGray5Color;
-    imageContainerView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageContainerView = [[ShimmeringView alloc] init];
+    self.imageContainerView.backgroundColor = UIColor.systemGray5Color;
+    self.imageContainerView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupImageView {
-    imageView = [[UIImageView alloc] init];
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
-    imageView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.imageView = [[UIImageView alloc] init];
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)setupReloadButton {
-    reloadButton = [[UIButton alloc] init];
+    self.reloadButton = [[UIButton alloc] init];
     UIImageSymbolConfiguration *configuration = [UIImageSymbolConfiguration configurationWithPointSize:70];
     UIImage *image = [UIImage systemImageNamed:@"arrow.clockwise" withConfiguration:configuration];
-    [reloadButton setImage:image forState:UIControlStateNormal];
-    reloadButton.tintColor = UIColor.whiteColor;
-    [reloadButton addTarget:self action:@selector(loadPhoto) forControlEvents:UIControlEventTouchUpInside];
-    [reloadButton setHidden:YES];
-    reloadButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.reloadButton setImage:image forState:UIControlStateNormal];
+    self.reloadButton.tintColor = UIColor.whiteColor;
+    [self.reloadButton addTarget:self action:@selector(loadPhoto) forControlEvents:UIControlEventTouchUpInside];
+    [self.reloadButton setHidden:YES];
+    self.reloadButton.translatesAutoresizingMaskIntoConstraints = NO;
 }
 
 - (void)openWeb {
-    [UIApplication.sharedApplication openURL:viewModel.webURL options:@{} completionHandler:nil];
+    [UIApplication.sharedApplication openURL:self.viewModel.webURL options:@{} completionHandler:nil];
 }
 
 - (void)loadPhoto {
-    [viewModel loadPhotoData];
+    [self.viewModel loadPhotoData];
 }
 
 @end

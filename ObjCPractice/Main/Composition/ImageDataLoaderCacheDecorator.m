@@ -29,9 +29,9 @@
 
 - (nullable id<ImageDataLoaderTask>)loadImageDataForURL:(nonnull NSURL *)url 
                                              completion:(nonnull ImageDataLoaderCompletion)completion {
-    return [loader loadImageDataForURL:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    return [self.loader loadImageDataForURL:url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (!error && data) {
-            [self->cacher saveImageData:data forURL:url completion:^(NSError * _Nullable error) {}];
+            [self.cacher saveImageData:data forURL:url completion:^(NSError * _Nullable error) {}];
         }
         
         completion(data, error);

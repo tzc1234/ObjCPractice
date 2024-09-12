@@ -29,14 +29,14 @@
 }
 
 - (void)loadImageData {
-    if (onLoadImageData) {
-        onLoadImageData(YES);
+    if (self.onLoadImageData) {
+        self.onLoadImageData(YES);
     }
     
     __weak PhotoImageDataViewModel *weakSelf = self;
     
-    self.task = [loader loadImageDataForURL:[self photoURL] 
-                                 completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    self.task = [self.loader loadImageDataForURL:[self photoURL]
+                                      completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (weakSelf.didLoadImageData) {
             weakSelf.didLoadImageData(data);
         }
@@ -48,14 +48,14 @@
 }
 
 - (void)cancelImageDataLoad {
-    [task cancel];
-    task = nil;
+    [self.task cancel];
+    self.task = nil;
 }
 
 - (NSURL *)photoURL {
     NSURLComponents *components = [[NSURLComponents alloc] init];
-    components.scheme = photo.url.scheme;
-    components.host = photo.url.host;
+    components.scheme = self.photo.url.scheme;
+    components.host = self.photo.url.host;
     components.path = [NSString stringWithFormat:@"/id/%@/1280/720", self.photo.ID];
     return components.URL;
 }

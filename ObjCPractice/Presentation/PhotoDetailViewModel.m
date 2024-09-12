@@ -29,28 +29,29 @@
 }
 
 - (NSString *)author {
-    return photo.author;
+    return self.photo.author;
 }
 
 - (NSURL *)webURL {
-    return photo.webURL;
+    return self.photo.webURL;
 }
 
 - (NSInteger)photoWidth {
-    return photo.width;
+    return self.photo.width;
 }
 
 - (NSInteger)photoHeight {
-    return photo.height;
+    return self.photo.height;
 }
 
 - (void)loadPhotoData {
-    if (onLoad) {
+    if (self.onLoad) {
         self.onLoad(YES);
     }
     
     __weak PhotoDetailViewModel *weakSelf = self;
-    self.task = [loader loadImageDataForURL:photo.url completion:^(NSData * _Nullable data, NSError * _Nullable error) {
+    self.task = [self.loader loadImageDataForURL:photo.url
+                                      completion:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
             if (weakSelf.shouldReload) {
                 weakSelf.shouldReload(YES);
@@ -76,7 +77,7 @@
 }
 
 - (void)cancelPhotoDataLoad {
-    [task cancel];
+    [self.task cancel];
     self.task = nil;
 }
 

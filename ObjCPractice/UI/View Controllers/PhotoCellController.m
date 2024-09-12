@@ -54,8 +54,8 @@
 }
 
 - (void)configureCell {
-    cell.titleLabel.text = self.author;
-    cell.photoView.image = nil;
+    self.cell.titleLabel.text = self.author;
+    self.cell.photoView.image = nil;
     [self setupBindings];
     [self loadImageData];
 }
@@ -63,22 +63,22 @@
 - (void)setupBindings {
     __weak PhotoCellController *weakSelf = self;
     
-    viewModel.onLoadImageData = ^(BOOL isLoading) {
+    self.viewModel.onLoadImageData = ^(BOOL isLoading) {
         weakSelf.cell.containerView.isShimmering = isLoading;
     };
     
-    viewModel.didLoadImageData = ^(NSData * _Nullable data) {
+    self.viewModel.didLoadImageData = ^(NSData * _Nullable data) {
         weakSelf.cell.photoView.image = [[UIImage alloc] initWithData:data];
     };
 }
 
 - (void)loadImageData {
-    [viewModel loadImageData];
+    [self.viewModel loadImageData];
 }
 
 - (void)cancelImageDataLoad {
     [self releaseCellForReuse];
-    [viewModel cancelImageDataLoad];
+    [self.viewModel cancelImageDataLoad];
 }
 
 - (void)releaseCellForReuse {
